@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Sensitive files
+*.pem
+*.key
+*.env
+secrets/
+credentials/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
