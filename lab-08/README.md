@@ -65,17 +65,32 @@ cd ~/lacework/aws
 ls -la
 ```
 
-You should see files like:
-- `main.tf` - Main Terraform configuration
-- `variables.tf` - Variable definitions
-- `outputs.tf` - Output values
-- `terraform.tfvars.example` - Example variable values
+**Note**: The Lacework CLI generates only a `main.tf` file. It does not generate `variables.tf`, `terraform.tfvars`, or `outputs.tf` files. This is expected behavior - the generated configuration uses Lacework Terraform modules that have sensible defaults built in, so additional variable files are not required.
 
-Review the main configuration:
+The Lacework CLI generates a minimal Terraform configuration that uses pre-built modules from the Lacework Terraform registry. This is a best practice approach that simplifies deployment and maintenance.
+
+Review the generated configuration:
 
 ```bash
 cat main.tf
 ```
+
+The `main.tf` file contains:
+- **Terraform provider configuration**: Defines the required AWS and Lacework providers
+- **AWS Config module**: Uses the `lacework/config/aws` module to set up Configuration assessment integration
+- **CloudTrail module**: Uses the `lacework/cloudtrail/aws` module to set up CloudTrail integration
+- **Module integration**: The CloudTrail module references the IAM role created by the Config module
+
+This modular approach means:
+- The complex IAM policies, S3 bucket configurations, and CloudTrail setup are handled by the modules
+- You get a clean, maintainable Terraform configuration
+- Updates to the modules automatically provide improvements and security fixes
+- Less code to maintain while still having full control over the deployment
+- **No need for tfvars files**: The modules use default values, so you can deploy directly without additional configuration files
+
+**Optional: Creating Custom Variables**
+
+If you need to customize the configuration (e.g., different region, custom naming, etc.), you can create your own `variables.tf` and `terraform.tfvars` files, but this is not required for this lab. The generated `main.tf` is ready to use as-is.
 
 ### Step 5: Initialize Terraform
 
@@ -100,7 +115,31 @@ This shows you:
 - Any changes that will be made
 - Output values that will be generated
 
-Review the plan carefully to understand what will be deployed.
+The plan output will display in your terminal. Review it carefully to understand what will be deployed.
+
+**Optional: Save the plan to a file:**
+
+If you want to save the plan output for later review or documentation:
+
+```bash
+terraform plan -out=tfplan
+```
+
+This saves the plan to a binary file `tfplan` that can be used later with `terraform apply tfplan`.
+
+**Or save as text:**
+
+To save the plan as readable text:
+
+```bash
+terraform plan > plan-output.txt
+```
+
+Then view it with:
+
+```bash
+cat plan-output.txt
+```
 
 ### Step 7: Apply Terraform Configuration
 
