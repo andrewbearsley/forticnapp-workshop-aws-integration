@@ -19,7 +19,7 @@
 
 1. Navigate to https://aws.amazon.com/
 2. Click **Sign into console**
-3. After logging in, change the region to **Asia Pacific (Singapore)** using the region selector in the top right of the AWS Console
+3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 4. Click the **CloudShell** icon in the top navigation bar (cloud icon with `>_` symbol)
 5. Wait for CloudShell to initialize
 

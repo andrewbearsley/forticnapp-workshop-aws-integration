@@ -14,7 +14,7 @@
 
 1. Navigate to https://aws.amazon.com/
 2. Click **Sign into console**
-3. After logging in, change the region to **Asia Pacific (Singapore)** using the region selector in the top right of the AWS Console
+3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 
 ### Step 2: Delete CloudFormation Stacks
 
