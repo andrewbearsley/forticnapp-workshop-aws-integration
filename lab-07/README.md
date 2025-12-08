@@ -9,7 +9,6 @@
 
 ## Prerequisites
 
-- Completed Lab 6
 - AWS account access
 - FortiCNAPP account credentials
 
@@ -24,19 +23,31 @@
 5. Wait for CloudShell to initialize (this may take a minute the first time)
 6. Once CloudShell opens, you'll have a Linux-based terminal environment ready to use
 
-### Step 2: Install Lacework CLI
+### Step 2: Set Up Installation Directory
+
+Create a bin directory in your home folder and add it to your PATH:
+
+```bash
+mkdir -p "$HOME/bin"
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+This directory will be used for both Lacework CLI and Terraform installations.
+
+### Step 3: Install Lacework CLI
 
 In the CloudShell terminal, run:
 
 ```bash
-curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | sudo bash -s -- -d /usr/local/bin
+curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | bash -s -- -d "$HOME/bin"
 ```
 
-This will download and install the Lacework CLI tool.
+This will download and install the Lacework CLI tool to your home bin directory.
 
 **Note**: For Windows installation (if needed outside CloudShell), download from the [Lacework CLI releases page](https://github.com/lacework/go-sdk/releases).
 
-### Step 3: Create API Key in FortiCNAPP
+### Step 4: Create API Key in FortiCNAPP
 
 Before configuring the CLI, you need to create an API key in the FortiCNAPP console:
 
@@ -53,7 +64,7 @@ Before configuring the CLI, you need to create an API key in the FortiCNAPP cons
 7. **Important**: Copy the **API Key** and **API Secret** immediately - you won't be able to see the secret again after closing the dialog
 8. Keep these credentials ready for the next step
 
-### Step 4: Configure CLI
+### Step 5: Configure CLI
 
 In CloudShell, run:
 
@@ -66,7 +77,7 @@ Enter your FortiCNAPP account credentials when prompted:
 - **API Key**: The API key you just created
 - **API Secret**: The API secret you just copied
 
-### Step 5: Verify CLI Installation
+### Step 6: Verify CLI Installation
 
 ```bash
 lacework version
@@ -75,24 +86,37 @@ lacework api get /api/v2/UserProfile
 
 The second command should return your user profile information, confirming the CLI is properly configured and connected.
 
-### Step 6: Install Terraform
+### Step 7: Install Terraform
 
-CloudShell comes with Terraform pre-installed, but let's verify and update if needed:
+Install Terraform in AWS CloudShell:
 
-```bash
-terraform version
-```
+1. Download Terraform (Linux amd64) and unzip it to your bin folder:
 
-If Terraform is not installed or you need a specific version, install it:
+First, get the latest Terraform version:
 
 ```bash
-wget https://releases.hashicorp.com/terraform/1.6.0/terraform_1.6.0_linux_amd64.zip
-unzip terraform_1.6.0_linux_amd64.zip
-sudo mv terraform /usr/local/bin/
-terraform version
+TERRAFORM_VERSION=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
 ```
 
-### Step 7: Verify Terraform Installation
+Then download and install that version:
+
+```bash
+wget -O terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
+unzip terraform.zip
+mv terraform "$HOME/bin/"
+rm terraform.zip
+```
+
+**Alternative**: If you prefer to check manually, visit [HashiCorp's Terraform releases page](https://releases.hashicorp.com/terraform/) and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
+
+2. Configure Terraform to use the temporary directory permanently; this tells Terraform to download big plugins to the temporary /tmp folder. Otherwise we can easily run out of CloudShell storage space:
+
+```bash
+echo 'export TF_PLUGIN_CACHE_DIR="/tmp"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Step 8: Verify Terraform Installation
 
 ```bash
 terraform version
