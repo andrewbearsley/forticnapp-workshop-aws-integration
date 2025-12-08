@@ -75,8 +75,8 @@ Now create an API key attached to the service user you just created:
    - **Assign this to a service user**: Toggle this **ON**
    - **Select a service user**: Choose the service user you just created (e.g., `[Your Name] Service User`)
 4. Click **Save**
-5. **Important**: Copy the **API Key** and **API Secret** immediately - you won't be able to see the secret again after closing the dialog
-6. Keep these credentials ready for the next step
+5. After saving, click on the ellipsis (three dots) next to the API key in the list and select **Download** to download the key as JSON.
+6. Open the downloaded JSON file and note the **API Key** and **API Secret** values. Keep these credentials ready for the next step
 
 ### Step 6: Configure CLI
 
