@@ -105,24 +105,13 @@ wget -O terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERS
 unzip terraform.zip
 mv terraform "$HOME/bin/"
 rm terraform.zip
-```
-
-**Alternative**: If you prefer to check manually, visit [HashiCorp's Terraform releases page](https://releases.hashicorp.com/terraform/) and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
-
-2. Configure Terraform to use the temporary directory permanently; this tells Terraform to download big plugins to the temporary /tmp folder. Otherwise we can easily run out of CloudShell storage space:
-
-```bash
+# Configure Terraform to use the temporary directory for cache to prevent running out of cloudshell storage space
 echo 'export TF_PLUGIN_CACHE_DIR="/tmp"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Step 8: Verify Terraform Installation
+**Alternative**: If you prefer to check manually, visit [HashiCorp's Terraform releases page](https://releases.hashicorp.com/terraform/) and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
 
-```bash
-terraform version
-```
-
-This should display the Terraform version information.
 
 ## Expected Results
 

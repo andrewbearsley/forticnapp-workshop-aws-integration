@@ -117,19 +117,42 @@ This shows you:
 
 The plan output will display in your terminal. Review it carefully to understand what will be deployed.
 
+**What will be created (40+ resources total):**
+
+**AWS Configuration Integration:**
+- 1 IAM Role (`lacework_iam_role`) - Cross-account role for Lacework to access AWS Config
+- 7 IAM Policies - Audit policies for reading AWS Config data (base policy + 6 versioned policies for 2025)
+- 7 IAM Role Policy Attachments - Attaching the audit policies to the IAM role
+- 1 Lacework Integration (`lacework_integration_aws_cfg`) - Configuration assessment integration
+- 1 Lacework External ID - Security identifier for the IAM role
+- 2 Random IDs - Unique identifiers for resource naming
+- 1 Time Sleep - Wait period for resource propagation
+
+**AWS CloudTrail Integration:**
+- 1 CloudTrail - AWS CloudTrail for API activity logging
+- 2 S3 Buckets - One for CloudTrail logs, one for CloudTrail log delivery
+- 2 S3 Bucket Policies - Access policies for the buckets
+- 2 S3 Bucket Versioning - Enable versioning on both buckets
+- 2 S3 Bucket Encryption - Server-side encryption configuration
+- 2 S3 Bucket Public Access Block - Block public access to buckets
+- 2 S3 Bucket Ownership Controls - Bucket ownership settings
+- 1 S3 Bucket Logging - Access logging configuration
+- 1 S3 Bucket ACL - Access control list for log bucket
+- 1 KMS Key - Encryption key for CloudTrail logs
+- 1 SNS Topic - Topic for CloudTrail notifications
+- 1 SNS Topic Policy - Access policy for SNS topic
+- 1 SNS Topic Subscription - Subscription to forward notifications
+- 1 SQS Queue - Queue to receive CloudTrail notifications
+- 1 SQS Queue Policy - Access policy for SQS queue
+- 1 IAM Policy - Cross-account policy for CloudTrail access
+- 1 IAM Role Policy Attachment - Attaching policy to IAM role
+- 1 Lacework Integration (`lacework_integration_aws_ct`) - CloudTrail integration
+- 1 Random ID - Unique identifier for resource naming
+- 1 Time Sleep - Wait period for resource propagation
+
 **Optional: Save the plan to a file:**
 
 If you want to save the plan output for later review or documentation:
-
-```bash
-terraform plan -out=tfplan
-```
-
-This saves the plan to a binary file `tfplan` that can be used later with `terraform apply tfplan`.
-
-**Or save as text:**
-
-To save the plan as readable text:
 
 ```bash
 terraform plan > plan-output.txt
@@ -151,12 +174,14 @@ terraform apply
 
 When prompted, type `yes` to confirm the deployment.
 
-**Note**: This process may take several minutes as it creates:
-- IAM roles and policies
-- CloudTrail (if not already exists)
-- S3 buckets for CloudTrail logs
-- SNS topics for notifications
-- Configuration assessment integration
+**Note**: This process may take several minutes as it creates 46 resources including:
+- IAM roles and policies (for both Config and CloudTrail integrations)
+- CloudTrail with encryption and logging
+- S3 buckets for CloudTrail logs (with versioning, encryption, and access controls)
+- KMS key for encryption
+- SNS topic and SQS queue for CloudTrail notifications
+- Lacework integrations (Configuration and CloudTrail)
+- Supporting resources (random IDs, time delays for propagation)
 
 ### Step 8: Verify Integration Deployment
 
