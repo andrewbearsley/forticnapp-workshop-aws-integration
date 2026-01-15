@@ -1,4 +1,4 @@
-# Lab 11: Cleanup
+# Lab 11: Clean up! Remove all workshop resources
 
 This lab provides a cleanup script to remove all workshop resources from AWS CloudShell.
 
@@ -56,6 +56,4 @@ The script removes the following workshop resources:
 
 If the script encounters errors:
 
-- Check AWS permissions for the CloudShell user.
-- Verify resources exist before running cleanup.
 - Some resources may require manual deletion if dependencies prevent automated removal.
