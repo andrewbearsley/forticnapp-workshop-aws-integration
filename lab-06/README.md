@@ -1,4 +1,4 @@
-# Lab 6: Clean Up!
+# Lab 6: Clean up! Delete stacks and terminate instances
 
 ## Objectives
 
