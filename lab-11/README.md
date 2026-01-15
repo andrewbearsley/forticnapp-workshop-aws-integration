@@ -1,4 +1,4 @@
-# Lab 11: Clean up! Remove all workshop resources
+# Lab 11: Clean up! Back to a sparkling clean environment
 
 This lab provides a cleanup script to remove all workshop resources from AWS CloudShell.
 
