@@ -131,9 +131,20 @@ ls C:\ProgramData\Lacework\
 ls C:\ProgramData\Lacework\Logs\
 ```
 
+### Step 7: Verify Agent in FortiCNAPP via CLI
+
+Once the agent checks in (up to 1 hour), you can verify it appears in FortiCNAPP. Open a new **CloudShell** tab (the CLI was configured in Lab 4) and run:
+
+```bash
+lacework agent list
+```
+
+Look for your Windows instance hostname in the output. If you don't see it yet, the agent hasn't completed its first check-in - try again later.
+
 ## Expected Results
 
 - Agent installed and running on Windows instance
 - LWDataCollector service running
 - Installation directory exists at `C:\ProgramData\Lacework\`
 - Log files present in `C:\ProgramData\Lacework\Logs\`
+- Agent visible in FortiCNAPP (after first check-in)

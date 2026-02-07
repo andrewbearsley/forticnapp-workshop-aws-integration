@@ -98,6 +98,19 @@ sudo tail -f /var/log/lacework/datacollector.log
 ```
 Press `Ctrl+C` to stop tailing the log.
 
+### Step 7: Verify Agent in FortiCNAPP via CLI
+
+Once the agent checks in (up to 1 hour), you can verify it appears in FortiCNAPP. Open a new **CloudShell** tab (the CLI was configured in Lab 4) and run:
+
+```bash
+lacework agent list
+```
+
+Look for your Linux instance hostname in the output. If you don't see it yet, the agent hasn't completed its first check-in - try again later.
+
+**Note:** The local `datacollector -status` check (Step 6) confirms the agent is running on the instance. The `lacework agent list` command confirms FortiCNAPP has received the agent's check-in.
+
 ## Expected Results
 
 - Agent installed and running on Linux instance
+- Agent visible in FortiCNAPP (after first check-in)
