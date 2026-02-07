@@ -18,14 +18,15 @@ Step-by-step instructions for integrating FortiCNAPP with AWS for cloud security
 - [Lab 1: Hands-on Cloud Security with FortiCNAPP](lab-01/README.md)
 - [Lab 2: Integrate AWS Inventory via CloudFormation](lab-02/README.md)
 - [Lab 3: Integrate Agentless Workload Scanning via CloudFormation](lab-03/README.md)
-- [Lab 4: Install Linux Agent](lab-04/README.md)
-- [Lab 5: Install Windows Agent](lab-05/README.md)
-- [Lab 6: Clean Up!](lab-06/README.md)
-- [Lab 7: Install Lacework CLI and Terraform](lab-07/README.md)
-- [Lab 8: Install integrations via Terraform](lab-08/README.md)
-- [Lab 9: Code Security for Infrastructure as Code (IaC)](lab-09/README.md)
-- [Lab 10: Code Security for Applications (SCA)](lab-10/README.md)
-- [Lab 11: Cleanup](lab-11/README.md)
+- [Lab 4: Install Lacework CLI and Trigger Inventory Scan](lab-04/README.md)
+- [Lab 5: Install Linux Agent](lab-05/README.md)
+- [Lab 6: Install Windows Agent](lab-06/README.md)
+- [Lab 7: Clean Up!](lab-07/README.md)
+- [Lab 8: Install Lacework CLI and Terraform](lab-08/README.md)
+- [Lab 9: Install integrations via Terraform](lab-09/README.md)
+- [Lab 10: Code Security for Infrastructure as Code (IaC)](lab-10/README.md)
+- [Lab 11: Code Security for Applications (SCA)](lab-11/README.md)
+- [Lab 12: Cleanup](lab-12/README.md)
 
 ## Resources
 

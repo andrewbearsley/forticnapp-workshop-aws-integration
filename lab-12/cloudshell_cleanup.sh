@@ -1,6 +1,6 @@
 #!/bin/bash
 # CloudShell Cleanup Script
-# This script cleans up CloudShell artifacts created during labs 7, 9, and 10
+# This script cleans up CloudShell artifacts created during labs 4, 8, 10, and 11
 #
 # To use: Copy and paste this entire script into AWS CloudShell, or save as a file and run:
 #   bash cloudshell_cleanup.sh#
@@ -10,7 +10,7 @@ set -e
 echo "=== FortiCNAPP Workshop CloudShell Cleanup ==="
 echo ""
 
-# Step 1: Destroy Terraform resources first (Lab 8)
+# Step 1: Destroy Terraform resources first (Lab 9)
 # This removes Terraform-managed AWS integrations
 echo "Checking for Terraform deployments..."
 if [ -d "$HOME/lacework/aws" ]; then

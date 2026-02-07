@@ -1,4 +1,4 @@
-# Lab 6: Clean Up!
+# Lab 7: Clean Up!
 
 ## Objectives
 
@@ -41,19 +41,19 @@
 
 ### Step 3: Terminate EC2 Instances
 
-#### Terminate Linux EC2 Instance (from Lab 4)
+#### Terminate Linux EC2 Instance (from Lab 5)
 
 1. Navigate to **EC2** service in AWS Console
 2. Click on **Instances** in the left navigation
-3. Find the Linux EC2 instance you created in Lab 4 (e.g., `FortiCNAPP-Linux-Agent`)
+3. Find the Linux EC2 instance you created in Lab 5 (e.g., `FortiCNAPP-Linux-Agent`)
 4. Select the instance
 5. Click **Instance state** > **Terminate instance**
 6. Confirm termination by typing `terminate` in the confirmation dialog
 7. Click **Terminate**
 
-#### Terminate Windows EC2 Instance (from Lab 5)
+#### Terminate Windows EC2 Instance (from Lab 6)
 
-1. In the **EC2** service, find the Windows EC2 instance you created in Lab 5 (e.g., `FortiCNAPP-Windows-Agent`)
+1. In the **EC2** service, find the Windows EC2 instance you created in Lab 6 (e.g., `FortiCNAPP-Windows-Agent`)
 2. Select the instance
 3. Click **Instance state** > **Terminate instance**
 4. Confirm termination by typing `terminate` in the confirmation dialog
@@ -70,5 +70,5 @@
 ## Expected Results
 
 - All CloudFormation stacks from Labs 2 and 3 deleted
-- All EC2 instances from Labs 4 and 5 terminated
+- All EC2 instances from Labs 5 and 6 terminated
 

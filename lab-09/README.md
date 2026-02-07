@@ -1,4 +1,4 @@
-# Lab 8: Install integrations via Terraform
+# Lab 9: Install integrations via Terraform
 
 ## Objectives
 
@@ -9,7 +9,7 @@
 
 ## Prerequisites
 
-- Completed Lab 7 (Lacework CLI and Terraform installed in CloudShell)
+- Completed Lab 8 (Lacework CLI and Terraform installed in CloudShell)
 - AWS account with appropriate permissions
 - FortiCNAPP account access with API key configured
 

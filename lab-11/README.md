@@ -1,4 +1,4 @@
-# Lab 10: Code Security for Applications (SCA)
+# Lab 11: Code Security for Applications (SCA)
 
 ## Objectives
 
@@ -11,7 +11,7 @@
 
 ## Prerequisites
 
-- Completed [Lab 7: Install Lacework CLI and Terraform](../lab-07/README.md)
+- Completed [Lab 8: Install Lacework CLI and Terraform](../lab-08/README.md)
 - Lacework CLI configured with FortiCNAPP credentials
 - AWS CloudShell access
 
