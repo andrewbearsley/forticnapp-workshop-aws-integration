@@ -202,21 +202,7 @@ You should see entries for:
    - Navigate to **Settings** > **Integrations** > **Cloud accounts**
    - Verify that your AWS account appears with both Configuration and CloudTrail integrations active
 
-### Step 9: Review Terraform Outputs
-
-View the Terraform outputs to see important information:
-
-```bash
-terraform output
-```
-
-This will show values like:
-- IAM role ARNs
-- CloudTrail ARN
-- S3 bucket names
-- Integration status
-
-### Step 10: Clean Up Resources
+### Step 9: Clean Up Resources
 
 After completing the lab, clean up the resources created by Terraform:
 
