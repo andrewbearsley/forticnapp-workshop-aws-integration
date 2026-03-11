@@ -39,9 +39,6 @@
      - Scanning Options: Leave checkboxes as default
 10. Click **Save** to save the integration configuration
 11. A modal dialog will appear: "Next step: Run or download the CloudFormation template"
-    - The modal explains that the integration will appear on the Cloud accounts page
-    - You need to run or download the CloudFormation template to complete the integration
-    - The template can be found in the detail page of this integration
 12. Click **Got it** to close the modal
 13. Navigate to the integration detail page:
     - The integration should now appear in the Cloud accounts list, in status 'Pending'
