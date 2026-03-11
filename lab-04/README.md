@@ -60,6 +60,9 @@ Before creating an API key, you need to create a new service user with the appro
 6. Fill in the service user details:
    - **Name**: Enter a name (e.g., `[Your Name] Service User`)
    - **Description**: Enter a description (e.g., `lab-04`)
+
+![Create service user in FortiCNAPP](images/forticnapp-create-service-user.png)
+
 7. Click **Next**
 8. Add the following user groups to grant the necessary permissions:
    - **'Cloud Integrations'** - Required for AWS integration management
