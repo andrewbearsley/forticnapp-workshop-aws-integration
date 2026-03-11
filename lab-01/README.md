@@ -39,6 +39,7 @@
 #### Resource Inventory
 
 *Which EC2 instances have the highest security risk based on vulnerability counts?*
+
 *How can this help prioritize remediation efforts?*
 
 1. Navigate to **Discovery** > **Resource Inventory** in the left navigation panel
@@ -51,6 +52,7 @@
 #### Explorer
 
 *How can we combine multiple security insights using Explorer to build custom queries?*
+
 *How can we visualize relationships between hosts and attack paths?*
 
 1. Navigate to **Discovery** > **Explorer** in the left navigation panel
@@ -73,6 +75,7 @@
 #### Search
 
 *How can we investigate application behavior and resource utilization for any application running on EC2?*
+
 *Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend?*
 *FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.*
 
@@ -99,6 +102,7 @@
 #### Alerts
 
 *How does FortiCNAPP detect and present security incidents?*
+
 *How can this help us respond effectively to real-world security events?*
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
@@ -143,6 +147,7 @@
 #### Attack Path
 
 *How could attackers exploit misconfigurations and exposed secrets to move through our environment?*
+
 *How does attack path analysis help prioritize remediation efforts?*
 
 1. Navigate to **Risk Center** > **Attack Path** > **Top Work Items** in the left navigation panel
@@ -201,6 +206,7 @@
 #### Vulnerabilities
 
 *How can we identify and prioritize vulnerabilities across cloud resources?*
+
 *Why does filtering by active packages help focus on more critical vulnerabilities?*
 
 1. Navigate to **Risk Center** > **Vulnerabilities** > **Vulnerabilities[New]** in the left navigation panel
@@ -217,6 +223,7 @@
 #### Code Security
 
 *How can we review code security findings and software composition analysis results?*
+
 *How does FortiCNAPP scan Infrastructure as Code (IaC) and application code to find misconfigurations and hard-coded secrets before they reach production?*
 
 1. Navigate to **Risk Center** > **Code Security** > **Infrastructure (IaC)** in the left navigation panel
