@@ -229,6 +229,9 @@
 1. Navigate to **Risk Center** > **Code Security** > **Infrastructure (IaC)** in the left navigation panel
 2. Choose a repository from the list
 3. Review the latest assessment
+
+![IaC assessment showing repository violations by severity](images/forticnapp-iac-assessment.png)
+
 4. Navigate to **Risk Center** > **Code Security** > **Applications** in the left navigation panel
 5. Select the **Vulnerabilities: Hard-coded secrets** tab
 6. Click on **Aws Credentials**
