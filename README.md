@@ -30,7 +30,7 @@ Step-by-step instructions for integrating FortiCNAPP with AWS for cloud security
 
 ## Resources
 
-- [FortiCNAPP Documentation](https://docs.fortinet.com/product/forticnapp)
+- <a href="https://docs.fortinet.com/product/forticnapp" target="_blank">FortiCNAPP Documentation</a>
 
 ## Contributing
 

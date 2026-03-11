@@ -17,7 +17,7 @@
 
 ### Step 1: Open AWS CloudShell
 
-1. Navigate to https://aws.amazon.com/
+1. Navigate to <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
 2. Click **Sign into console**
 3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 4. Click the **CloudShell** icon in the top navigation bar (cloud icon with `>_` symbol)
@@ -197,7 +197,7 @@ You should see entries for:
 - `AwsCtSqs` (CloudTrail integration)
 
 2. **In FortiCNAPP Console:**
-   - Log into FortiCNAPP console at https://partner-demo.lacework.net/
+   - Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
    - Ensure tenant is set to **FORTINETAPACDEMO**
    - Navigate to **Settings** > **Integrations** > **Cloud accounts**
    - Verify that your AWS account appears with both Configuration and CloudTrail integrations active
@@ -253,6 +253,6 @@ rm -rf ~/lacework/aws
 
 ## Additional Resources
 
-- [FortiCNAPP Documentation: AWS Integration Terraform from AWS CloudShell](https://docs.fortinet.com/document/forticnapp/latest/administration-guide/283460/aws-integration-terraform-from-aws-cloudshell)
+- <a href="https://docs.fortinet.com/document/forticnapp/latest/administration-guide/283460/aws-integration-terraform-from-aws-cloudshell" target="_blank">FortiCNAPP Documentation: AWS Integration Terraform from AWS CloudShell</a>
 
 

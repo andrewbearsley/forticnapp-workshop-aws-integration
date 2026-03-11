@@ -18,7 +18,7 @@
 
 ### Step 1: Open AWS CloudShell
 
-1. Log into AWS Console at https://aws.amazon.com/
+1. Log into AWS Console at <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
 2. Change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right
 3. Click the **CloudShell** icon in the top navigation bar
 4. Wait for CloudShell to initialize
@@ -136,7 +136,7 @@ cat sbom.json
 
 ## Additional Resources
 
-- [Lacework SCA Scanning Documentation](https://docs.fortinet.com/document/lacework-forticnapp/latest/administration-guide/433465/software-composition-analysis-sca)
-- [Example Repository](https://github.com/andrewbearsley/lacework-sca-scan-example)
+- <a href="https://docs.fortinet.com/document/lacework-forticnapp/latest/administration-guide/433465/software-composition-analysis-sca" target="_blank">Lacework SCA Scanning Documentation</a>
+- <a href="https://github.com/andrewbearsley/lacework-sca-scan-example" target="_blank">Example Repository</a>
 
 

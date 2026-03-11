@@ -12,7 +12,7 @@
 
 ### Step 1: Log into AWS Console
 
-1. Navigate to https://aws.amazon.com/
+1. Navigate to <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
 2. Click **Sign into console**
 3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 

@@ -18,7 +18,7 @@
 
 ### Step 1: Log into AWS Console and Open CloudShell
 
-1. Navigate to https://aws.amazon.com/
+1. Navigate to <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
 2. Click **Sign into console**
 3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 4. Click the **CloudShell** icon in the top navigation bar (cloud icon with `>_` symbol)
@@ -47,13 +47,13 @@ curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | bas
 
 This will download and install the Lacework CLI tool to your home bin directory.
 
-**Note**: For Windows installation (if needed outside CloudShell), download from the [Lacework CLI releases page](https://github.com/lacework/go-sdk/releases).
+**Note**: For Windows installation (if needed outside CloudShell), download from the <a href="https://github.com/lacework/go-sdk/releases" target="_blank">Lacework CLI releases page</a>.
 
 ### Step 4: Create Service User in FortiCNAPP
 
 Before creating an API key, you need to create a new service user with the appropriate permissions:
 
-1. Log into FortiCNAPP console at https://partner-demo.lacework.net/
+1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Ensure tenant is set to **FORTINETAPACDEMO**
 3. Navigate to **Settings** > **Access Control** > **Users**
 4. Click **Add New**
@@ -128,7 +128,7 @@ echo 'export TF_PLUGIN_CACHE_DIR="/tmp"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-**Alternative**: If you prefer to check manually, visit [HashiCorp's Terraform releases page](https://releases.hashicorp.com/terraform/) and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
+**Alternative**: If you prefer to check manually, visit <a href="https://releases.hashicorp.com/terraform/" target="_blank">HashiCorp's Terraform releases page</a> and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
 
 
 ## Expected Results

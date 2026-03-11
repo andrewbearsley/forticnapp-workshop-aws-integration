@@ -18,7 +18,7 @@
 
 *How do we access the FortiCNAPP demo environment and select the appropriate tenant?*
 
-1. Navigate to https://partner-demo.lacework.net/
+1. Navigate to <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Enter your email address
 3. Click **Get sign in link**
 4. Check your email and click the sign-in link
