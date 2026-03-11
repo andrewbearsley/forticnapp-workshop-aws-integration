@@ -113,6 +113,8 @@ After the stack creation is complete, review the resources that were created:
 3. Verify the AWS account appears in the list with Type 'Configuration' and 'CloudTrail'
    - You may need to refresh the browser to see the new integration.
 
+![FortiCNAPP Cloud accounts showing new AWS integration](images/forticnapp-new-integration.png)
+
 ## Expected Results
 
 - CloudFormation stack successfully deployed in AWS
