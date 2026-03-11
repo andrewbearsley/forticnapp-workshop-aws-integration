@@ -139,9 +139,12 @@
 
 #### Attack Path
 
-*How could attackers exploit misconfigurations and exposed secrets to move through our environment? How does attack path analysis help prioritize remediation efforts?*
+*How could attackers exploit misconfigurations and exposed secrets to move through our environment?*
+*How does attack path analysis help prioritize remediation efforts?*
 
 1. Navigate to **Risk Center** > **Attack Path** > **Top Work Items** in the left navigation panel
+
+![Attack Path Top Work Items](images/forticnapp-attack-paths.png)
 2. In the **Top risky paths with exposed secrets** section, select an entry from the table
 3. Click **View Attack Path** in the **Action** column
 4. Investigate the attack path and answer the following questions:
