@@ -174,6 +174,9 @@
 2. Click on **CIS Amazon Web Services Foundations Benchmark v4.0.1** framework
 3. Click the filter icon under **By section**
 4. Filter by **non-compliant resources**
+
+![CIS Benchmark compliance filter showing non-compliant policies](images/forticnapp-compliance-filter.png)
+
 5. Click into the policy **Ensure that S3 is configured with 'Block Public Access' enabled**
 6. Review the policy details. How many S3 buckets are non-compliant?
 7. Click **View context** to understand the policy context
