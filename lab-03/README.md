@@ -93,6 +93,9 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 1. Navigate to **ECS** (Elastic Container Service) in AWS Console
 2. Click on **Clusters** in the left navigation
 3. Find the ECS cluster that was created by the CloudFormation stack
+
+![ECS cluster created by Agentless Workload Scanning](images/aws-ecs-cluster.png)
+
 4. Click on the cluster name to view details
 5. Review the cluster configuration and resources
 6. Navigate to **Task Definitions** in the left navigation
