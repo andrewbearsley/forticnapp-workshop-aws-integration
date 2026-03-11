@@ -28,6 +28,9 @@
 7. In the **Choose integration type** dropdown, select **Agentless Workload Scanning (Single account)**
 8. The configuration screen (Step 2 of 2 • Configuration) will appear
 9. Configure the integration:
+
+![Agentless Workload Scanning configuration page](images/forticnapp-agentless-config.png)
+
    - **Name**: Enter `Agentless Workload Scanning [your name]` (e.g., `Agentless Workload Scanning John Doe`)
    - **Scanning AWS Account ID**: Enter your AWS account ID
    - Leave all other options as default:
