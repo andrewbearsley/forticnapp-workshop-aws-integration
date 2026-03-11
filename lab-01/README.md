@@ -70,10 +70,15 @@
 
 #### Search
 
-*How can we investigate application behavior and resource utilization for any application running on EC2? Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend? FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.*
+*How can we investigate application behavior and resource utilization for any application running on EC2?*
+*Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend?*
+*FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.*
 
 1. Click the **Search** icon in the left navigation panel
 2. Search for **datacollector** (this is the FortiCNAPP agent application)
+
+![Search for datacollector in FortiCNAPP](images/forticnapp-search-query.png)
+
 3. In the search results, click on **datacollector**
 4. Review the application details to investigate what datacollector is doing in the cloud environment:
    - What network connections is it making?
@@ -82,6 +87,8 @@
 5. Answer the following questions:
    - What is the datacollector memory usage trend?
    - What is the CPU usage percentage?
+
+![Datacollector application details showing memory and CPU usage](images/forticnapp-search-datacollector.png)
 
 ### Step 3: Explore Threat Center Features
 
