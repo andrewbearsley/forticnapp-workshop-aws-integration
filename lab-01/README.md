@@ -40,6 +40,8 @@
 3. Sort the table by **Vulnerabilities** (click the Vulnerabilities column header or use the "Sort: Vulnerabilities" option)
 4. Review the table to identify which EC2 instances have the highest number of vulnerabilities
 
+![Resource Inventory filtered by EC2 instances and sorted by vulnerabilities](images/forticnapp-resource-inventory.png)
+
 #### Explorer
 
 *How can we combine multiple security insights using Explorer to build custom queries and visualize relationships between hosts and attack paths?*
