@@ -14,6 +14,8 @@
    - This step is critical - the CloudFormation template will deploy to whatever region is selected
    - If you skip this step, resources will be created in the wrong region
 
+![AWS Console showing region selector set to Asia Pacific (Singapore)](images/aws-console-region-selection.png)
+
 ### Step 2: Get CloudFormation Template from FortiCNAPP
 
 1. Log into FortiCNAPP console at https://partner-demo.lacework.net/
