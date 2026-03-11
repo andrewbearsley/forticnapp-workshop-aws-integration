@@ -73,6 +73,9 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
 4. Review and Create Stack: 
    - Review the stack details and leave as default
    - Click **Submit** to deploy the stack
+
+![CloudFormation capabilities acknowledgement and Submit button](images/aws-agentless-stack-submit.png)
+
    - Monitor the stack creation progress. Refresh via the **Refresh** buttons next to 'Stacks' and 'Events'.
    - Review Resources to see the resources created by the stack.
    - Review Outputs to see the outputs of the stack.
