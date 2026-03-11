@@ -12,6 +12,8 @@
 2. Click **Sign into console**
 3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
 
+![AWS Console showing region selector set to Asia Pacific (Singapore)](images/aws-console-region-selection.png)
+
 ### Step 2: Get CloudFormation Template from FortiCNAPP
 
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
