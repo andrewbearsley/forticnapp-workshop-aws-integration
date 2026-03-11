@@ -98,6 +98,9 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 
 4. Click on the cluster name to view details
 5. Review the cluster configuration and resources
+
+![ECS cluster scheduled tasks for agentless scanning](images/aws-ecs-scheduled-task.png)
+
 6. Navigate to **Task Definitions** in the left navigation
 7. Find the task definition related to the agentless scanning (look for "sidekick" in the name)
 
