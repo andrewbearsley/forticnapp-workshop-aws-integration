@@ -131,6 +131,8 @@
 1. Navigate to **Threat Center** > **Workloads** > **Kubernetes** in the left navigation panel
 2. Click on the **Pod Network** tab to see process activity within the Kubernetes cluster
 
+![Workloads Kubernetes resources view](images/forticnapp-workload-kubernetes.png)
+
 ### Step 4: Explore Risk Center Features
 
 *How can we analyze security risks across attack paths, compliance, identities, vulnerabilities, and code security?*
