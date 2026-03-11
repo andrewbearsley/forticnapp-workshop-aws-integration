@@ -57,9 +57,15 @@
 4. Click **+ Add clause**
 5. Add a **WHERE** clause: **Attack Path** = **true**
 6. Click **Search** to execute the query
+
+![Explorer query builder showing SHOW Hosts with WHERE clause](images/forticnapp-explorer-query.png)
+
 7. Review the results to see hosts that are part of attack paths
 8. For one or more hosts in the results, click **Graph** to visualize relationships
 9. Explore the graph view to understand how these hosts connect to other resources, identities, and potential attack vectors
+
+![Explorer graph view showing host relationships and attack vectors](images/forticnapp-explorer-graph.png)
+
 10. For a host in the results, review its details. How many vulnerabilities are actually active?
 
 #### Search
