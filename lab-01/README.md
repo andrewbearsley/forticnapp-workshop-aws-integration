@@ -249,6 +249,9 @@
 *How do security policies define the rules that FortiCNAPP uses to detect violations and generate alerts?*
 
 1. Navigate to **Governance** > **Policies** in the left navigation panel
+
+![Policy catalog showing compliance policies](images/forticnapp-policies.png)
+
 2. Review policies in the **Compliance** tab
 3. Review policies in the **Threats** tab
 4. Review policies in the **Vulnerabilities: Build time** tab (Build and Runtime)
