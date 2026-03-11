@@ -79,6 +79,9 @@ After the stack creation is complete, review the resources that were created:
 1. Navigate to **CloudTrail** service in AWS Console
 2. Click on **Trails** in the left navigation
 3. Find the trail that was created (it will have a name ending in `-laceworkcws`, e.g., `AWS-CloudTrail-laceworkcws`)
+
+![AWS CloudTrail dashboard showing the created trail](images/aws-cloudtrail-created.png)
+
 4. Click on the trail name to view details
 5. Review the **General details** section:
    - Verify **SNS notification delivery** is enabled
