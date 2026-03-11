@@ -193,6 +193,8 @@
 4. Click **Investigate** to view identity details
 5. Review the **Granted vs. used entitlements** chart. How many granted vs used entitlements are shown?
 
+![Top identity risks with identity details](images/forticnapp-identities.png)
+
 #### Vulnerabilities
 
 *How can we identify and prioritize vulnerabilities across cloud resources? Why does filtering by active packages help focus on more critical vulnerabilities?*
