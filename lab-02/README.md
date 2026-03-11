@@ -35,6 +35,8 @@
 
 The CloudFormation template should now be open in your AWS Console on Step 1 (Create stack). The template URL should already be populated. Configure the stack:
 
+![AWS CloudFormation Create stack page with template URL pre-populated](images/aws-cloudformation-create-stack.png)
+
 1. Create Stack: Click **Next** to proceed to the next step
 2. Specify stack details: Review the parameters and leave them as default
    - The default configuration will create a new CloudTrail trail
