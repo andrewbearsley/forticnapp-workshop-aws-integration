@@ -55,6 +55,9 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
 
 1. Create Stack: Click **Next** to proceed to the next step
 2. Specify stack details: Review the parameters
+
+![CloudFormation stack details for Agentless Workload Scanning](images/aws-agentless-stack-details.png)
+
    - Enter a **Stack name** (e.g., `AWS-AgentlessScanning`). Stack name must contain only letters, numbers, hyphens. Must start with a letter.
    - In the **Scanner Deployment Configuration** section, find the **Regions** parameter
    - Set **Regions** to `ap-southeast-1` (this is the region where workloads exist and will be scanned)
