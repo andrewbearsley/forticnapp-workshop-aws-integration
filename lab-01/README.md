@@ -181,6 +181,8 @@
 6. Review the policy details. How many S3 buckets are non-compliant?
 7. Click **View context** to understand the policy context
 
+![S3 Block Public Access policy showing non-compliant resources](images/forticnapp-compliance-policy-noncompliant.png)
+
 #### Identities
 
 *How can we analyze identity and access management risks in the cloud environment?*
