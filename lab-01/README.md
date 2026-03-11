@@ -168,6 +168,9 @@
 *How can we review compliance posture and identify violations against security frameworks?*
 
 1. Navigate to **Risk Center** > **Compliance** > **Cloud** in the left navigation panel
+
+![Cloud compliance dashboard showing frameworks](images/forticnapp-cloud-compliance.png)
+
 2. Click on **CIS Amazon Web Services Foundations Benchmark v4.0.1** framework
 3. Click the filter icon under **By section**
 4. Filter by **non-compliant resources**
