@@ -40,6 +40,7 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
 1. Create Stack: Click **Next** to proceed to the next step
 2. Specify stack details: Review the parameters and leave them as default
    - The default configuration will create a new CloudTrail trail
+   - **Note**: For simplicity, we are creating a new CloudTrail in this lab. Customer environments will almost always have an existing centralised CloudTrail
    - Stack name will be pre-populated (e.g., `AWS-CloudTrail`)
    - API Token and other parameters are pre-configured
    - Click **Next** to proceed to the next step
