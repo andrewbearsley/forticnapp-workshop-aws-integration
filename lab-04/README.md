@@ -5,7 +5,7 @@ Normally, FortiCNAPP collects resource inventory on a scheduled cycle (up to 24 
 ## Objectives
 
 - Install the Lacework CLI tool in AWS CloudShell
-- Configure CLI with FortiCNAPP credentials
+- Configure CLI with FortiCNAPP API credentials
 - Verify AWS integrations from Labs 2 and 3
 - Trigger an inventory scan to populate compliance data
 
@@ -48,46 +48,22 @@ This will download and install the Lacework CLI tool to your home bin directory.
 
 ![CloudShell showing Lacework CLI successfully installed](images/cloudshell-lacework-cli-installed.png)
 
-### Step 4: Create Service User in FortiCNAPP
+### Step 4: Download API Key from FortiCNAPP
 
-Before creating an API key, you need to create a new service user with the appropriate permissions:
+An existing service user **AWS Lab** has been pre-configured with the necessary permissions. Download the API key for this user:
 
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Ensure tenant is set to **FORTINETAPACDEMO**
-3. Navigate to **Settings** > **Access Control** > **Users**
-4. Click **Add New**
-5. Choose **User Type**: **Service User**
-6. Fill in the service user details:
-   - **Name**: Enter a name (e.g., `[Your Name] Service User`)
-   - **Description**: Enter a description (e.g., `lab-04`)
+3. Navigate to **Settings** > **Configuration** > **API keys**
+4. Click on the **Service user API keys** tab
+5. Find the API key for the **AWS Lab** service user
+6. Click on the ellipsis (three dots) next to the API key and select **Download** to download the key as JSON
 
-![Create service user in FortiCNAPP](images/forticnapp-create-service-user.png)
+![API keys page showing Service user API keys with Download option](images/forticnapp-download-api-key.png)
 
-7. Click **Next**
-8. Add the following user groups to grant the necessary permissions:
-   - **'Cloud Integrations'** - Required for AWS integration management
-   - **'Code Security Scanner'** - Required for code security scanning (Labs 10-11)
+7. Open the downloaded JSON file and note the values. Keep these credentials ready for the next step
 
-![Service user permissions with Cloud Integrations and Code Security Scanner](images/forticnapp-service-user-permissions.png)
-
-9. Complete the service user creation
-
-### Step 5: Create API Key in FortiCNAPP
-
-Now create an API key attached to the service user you just created:
-
-1. Navigate to **Settings** > **Configuration** > **API keys**
-2. Click **Create API key**
-3. Fill in the API key details:
-   - **Name**: Enter a name (e.g., `service-user-api-key-yourname`)
-   - **Description**: Enter a description (e.g., `lab-04`)
-   - **Assign this to a service user**: Toggle this **ON**
-   - **Select a service user**: Choose the service user you just created (e.g., `[Your Name] Service User`)
-4. Click **Save**
-5. After saving, click on the ellipsis (three dots) next to the API key in the list and select **Download** to download the key as JSON.
-6. Open the downloaded JSON file and note the **API Key** and **API Secret** values. Keep these credentials ready for the next step
-
-### Step 6: Configure CLI
+### Step 5: Configure CLI
 
 In CloudShell, run:
 
@@ -111,7 +87,7 @@ Enter your FortiCNAPP account credentials when prompted. These values are taken 
 - **API Secret**: The `secret` value from the JSON file
 - **Sub-Account** (if prompted): The `subAccount` value from the JSON file
 
-### Step 7: Verify CLI Installation
+### Step 6: Verify CLI Installation
 
 ```bash
 lacework version
@@ -120,7 +96,7 @@ lacework api get /api/v2/UserProfile
 
 The second command should return your user profile information, confirming the CLI is properly configured and connected.
 
-### Step 8: List Cloud Account Integrations
+### Step 7: List Cloud Account Integrations
 
 Verify that the integrations from Labs 2 and 3 are visible:
 
@@ -133,7 +109,7 @@ You should see entries for your AWS account including:
 - `AwsCtSqs` (CloudTrail integration from Lab 2)
 - `AwsSidekick` (Agentless Workload Scanning from Lab 3, if completed)
 
-### Step 9: Trigger Inventory Scan
+### Step 8: Trigger Inventory Scan
 
 Normally, FortiCNAPP collects resource inventory on a scheduled cycle (up to 24 hours). To avoid waiting, you can trigger an immediate scan.
 
