@@ -23,9 +23,11 @@
 3. Click **Get sign in link**
 
 ![FortiCNAPP login page with email field highlighted](images/forticnapp-login.png)
+
 4. Check your email and click the sign-in link
-5. Select the **FORTIDEMO** tenant from the bottom of the navigation drawer
-6. Review the main dashboard
+5. If you see an onboarding wizard, skip it and select **Go to platform**
+6. Select the **FORTIDEMO** tenant from the bottom of the navigation drawer
+7. Review the main dashboard
 
 ### Step 2: Explore Discovery Features
 
