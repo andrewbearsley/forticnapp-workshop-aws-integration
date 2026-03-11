@@ -90,6 +90,8 @@ After the stack creation is complete, review the resources that were created:
      - This is the S3 bucket where CloudTrail logs are stored
      - If integrating to an existing CloudTrail, you would need these details
 
+![CloudTrail details showing trail log location and SNS notification delivery](images/aws-cloudtrail-details.png)
+
 #### Review IAM Role
 
 1. Navigate to **IAM** service in AWS Console
