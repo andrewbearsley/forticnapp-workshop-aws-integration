@@ -202,6 +202,9 @@
 1. Navigate to **Risk Center** > **Vulnerabilities** > **Vulnerabilities[New]** in the left navigation panel
 2. Click **Explore: Hosts**
 3. Review the list. How many hosts are vulnerable?
+
+![Vulnerabilities Explore Hosts view](images/forticnapp-vulnerabilities.png)
+
 4. Click **Filter**
 5. Add a clause: **Package** > **Package status** = **Active**
 6. Scroll to the bottom and click **Search**
