@@ -99,7 +99,7 @@
 *How does FortiCNAPP detect and present security incidents, and how can this help us respond effectively to real-world security events?*
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
-2. Filter by **past 4 months** using the date range selector
+2. Filter by **past 6 months** using the date range selector
 3. Filter for **Composite** alerts using the alert category filter
 
 ![Alerts page filtered by Composite alerts](images/forticnapp-alerts.png)
