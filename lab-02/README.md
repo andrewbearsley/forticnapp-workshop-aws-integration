@@ -104,6 +104,8 @@ After the stack creation is complete, review the resources that were created:
 5. Review the role's permissions and trust relationships
    - The trust relationship will show that FortiCNAPP (Lacework) can assume this role
 
+![IAM role trust relationship showing FortiCNAPP cross-account access](images/aws-iam-role-trust.png)
+
 ### Step 5: Verify Integration in FortiCNAPP
 
 1. Return to FortiCNAPP console
