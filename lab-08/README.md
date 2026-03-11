@@ -90,10 +90,21 @@ In CloudShell, run:
 lacework configure
 ```
 
-Enter your FortiCNAPP account credentials when prompted:
-- **Account**: Your FortiCNAPP account name (e.g., `partner-demo`)
-- **API Key**: The API key you just created
-- **API Secret**: The API secret you just copied
+Enter your FortiCNAPP account credentials when prompted. These values are taken from the JSON file downloaded in the previous step:
+
+```json
+{
+  "keyId": "FORTINET_5DFDAF3B...",
+  "secret": "_f1b528...",
+  "account": "partner-demo.lacework.net",
+  "subAccount": "fortinetapacdemo"
+}
+```
+
+- **Account**: `partner-demo.lacework.net` (the `account` value from the JSON file)
+- **API Key**: The `keyId` value from the JSON file
+- **API Secret**: The `secret` value from the JSON file
+- **Sub-Account** (if prompted): The `subAccount` value from the JSON file
 
 ### Step 7: Verify CLI Installation
 
