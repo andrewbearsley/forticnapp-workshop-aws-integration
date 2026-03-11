@@ -270,3 +270,5 @@
 1. Select **Settings** > **My profile** in the Settings navigation panel
 2. Disable the default email notification
 
+![My profile settings page](images/forticnapp-user-settings.png)
+
