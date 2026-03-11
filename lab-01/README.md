@@ -101,6 +101,9 @@
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
 2. Filter by **past 4 months** using the date range selector
 3. Filter for **Composite** alerts using the alert category filter
+
+![Alerts page filtered by Composite alerts](images/forticnapp-alerts.png)
+
 4. Open the **Potentially Compromised AWS Keys** alert
 5. Click on the **Observations** tab to see the timeline of events
 6. Review the intrusion graph and observations table to understand the sequence of activities and how an attacker might have progressed through our environment
