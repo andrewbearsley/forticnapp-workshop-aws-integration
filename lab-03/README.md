@@ -22,6 +22,9 @@
 4. Click **Add New**
 5. Select **Amazon Web Services** as the cloud provider
 6. Choose **CloudFormation** as the integration method, Click **Next**
+
+![FortiCNAPP integrate cloud account with CloudFormation selected](images/forticnapp-cloudformation-integration.png)
+
 7. In the **Choose integration type** dropdown, select **Agentless Workload Scanning (Single account)**
 8. The configuration screen (Step 2 of 2 • Configuration) will appear
 9. Configure the integration:
