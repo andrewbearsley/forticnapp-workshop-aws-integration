@@ -1,8 +1,8 @@
-# Lab 2: Integrate AWS Inventory via CloudFormation
+# Lab 2: Integrate AWS Configuration and AWS CloudTrail via CloudFormation
 
 ## Objectives
 
-- Integrate AWS inventory with FortiCNAPP using CloudFormation
+- Integrate AWS Configuration and AWS CloudTrail with FortiCNAPP using CloudFormation
 
 ## Lab Steps
 

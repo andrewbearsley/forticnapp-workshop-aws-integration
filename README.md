@@ -16,7 +16,7 @@ Step-by-step instructions for integrating FortiCNAPP with AWS for cloud security
 ## Workshop Structure
 
 - [Lab 1: Hands-on Cloud Security with FortiCNAPP](lab-01/README.md)
-- [Lab 2: Integrate AWS Inventory via CloudFormation](lab-02/README.md)
+- [Lab 2: Integrate AWS Configuration and AWS CloudTrail via CloudFormation](lab-02/README.md)
 - [Lab 3: Integrate Agentless Workload Scanning via CloudFormation](lab-03/README.md)
 - [Lab 4: Install Lacework CLI and Trigger Inventory Scan](lab-04/README.md)
 - [Lab 5: Install Linux Agent](lab-05/README.md)
