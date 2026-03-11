@@ -122,6 +122,8 @@
 4. Click on the timeline at the bottom to explore different periods in time
 5. Scroll down to understand what is running in the environment
 
+![Workloads Hosts polygraph visualization](images/forticnapp-workload-hosts.png)
+
 #### Workloads - Kubernetes
 
 *How can we monitor process activity within Kubernetes clusters?*
