@@ -58,6 +58,9 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
    - Review Outputs to see the outputs of the stack.
    - Review Events to see the events of the stack.
    - Wait for stack status to show **CREATE_COMPLETE**
+
+![CloudFormation stack events showing CREATE_COMPLETE](images/aws-cloudformation-complete.png)
+
    - Click **Close** to close the stack creation page
 
 ### Step 4: Review CloudFormation Resources
