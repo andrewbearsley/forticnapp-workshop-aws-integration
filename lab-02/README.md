@@ -24,6 +24,9 @@
 4. Click **Add New**
 5. Select **Amazon Web Services** as the cloud provider
 6. Choose **CloudFormation** as the integration method
+
+![FortiCNAPP console showing Cloud accounts and CloudFormation integration method selected](images/forticnapp-cloudformation-integration.png)
+
 7. In the **Choose integration type** dropdown, select **CloudTrail+Configuration**
 8. Click **Run CloudFormation Template**
 9. This will open the CloudFormation stack creation page in your chosen AWS session (already logged in from Step 1)
