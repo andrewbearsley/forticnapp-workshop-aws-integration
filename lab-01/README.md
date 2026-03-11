@@ -234,6 +234,9 @@
 
 4. Navigate to **Risk Center** > **Code Security** > **Applications** in the left navigation panel
 5. Select the **Vulnerabilities: Hard-coded secrets** tab
+
+![Applications security showing hard-coded secrets](images/forticnapp-app-security.png)
+
 6. Click on **Aws Credentials**
 7. Find the code where the access key has been published
 
