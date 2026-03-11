@@ -257,9 +257,9 @@
 4. Review policies in the **Vulnerabilities: Build time** tab (Build and Runtime)
 5. Review policies in the **Anomalies** tab
 
-### Step 6: Configure Settings and Review Integration Options
+### Step 6: Configure Settings
 
-*How can we configure user settings and understand available methods for integrating FortiCNAPP with cloud environments?*
+*How can we configure user settings?*
 
 #### Change Tenant
 
@@ -269,10 +269,4 @@
 
 1. Select **Settings** > **My profile** in the Settings navigation panel
 2. Disable the default email notification
-
-#### Integrations
-
-1. Navigate to **Integrations** > **Cloud accounts** in the Settings navigation panel
-2. Review the integrations available
-3. Review the integration options available in the Integrations section
 
