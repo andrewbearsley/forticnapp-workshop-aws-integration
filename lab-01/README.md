@@ -79,7 +79,7 @@
 *How does FortiCNAPP detect and present security incidents, and how can this help us respond effectively to real-world security events?*
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
-2. Filter by **past 3 months** using the date range selector
+2. Filter by **past 4 months** using the date range selector
 3. Filter for **Composite** alerts using the alert category filter
 4. Open the **Potentially Compromised AWS Keys** alert
 5. Click on the **Observations** tab to see the timeline of events
@@ -130,7 +130,7 @@
 *How can we review compliance posture and identify violations against security frameworks?*
 
 1. Navigate to **Risk Center** > **Compliance** > **Cloud** in the left navigation panel
-2. Click on **CIS Amazon Web Services Foundations Benchmark** framework
+2. Click on **CIS Amazon Web Services Foundations Benchmark v4.0.1** framework
 3. Click the filter icon under **By section**
 4. Filter by **non-compliant resources**
 5. Click into the policy **Ensure that S3 is configured with 'Block Public Access' enabled**
@@ -195,7 +195,7 @@
 
 #### My Settings
 
-1. Select **My Settings** > **My profile** in the Settings navigation panel
+1. Select **Settings** > **My profile** in the Settings navigation panel
 2. Disable the default email notification
 
 #### Integrations
