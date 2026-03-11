@@ -43,6 +43,9 @@
 13. Navigate to the integration detail page:
     - The integration should now appear in the Cloud accounts list, in status 'Pending'
     - Click on the integration you just created to open its detail page
+
+![Agentless integration in pending status with Run CloudFormation Template button](images/forticnapp-agentless-pending.png)
+
 14. Click **Run CloudFormation Template** on the integration detail page
 15. This will open the CloudFormation stack creation page in your chosen AWS session (already logged in from Step 1)
 
