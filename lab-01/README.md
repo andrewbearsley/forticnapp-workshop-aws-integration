@@ -106,9 +106,11 @@
 
 4. Open the **Potentially Compromised AWS Keys** alert
 5. Click on the **Observations** tab to see the timeline of events
-6. Review the intrusion graph and observations table to understand the sequence of activities and how an attacker might have progressed through our environment
+6. Review the observations table to understand the sequence of activities and how an attacker might have progressed through our environment
 
 ![Potentially Compromised AWS Keys alert with Observations tab](images/forticnapp-compromised-aws-keys.png)
+
+7. In **AI Assist**, click **Triage** to understand the alert
 
 #### Workloads - Hosts
 
