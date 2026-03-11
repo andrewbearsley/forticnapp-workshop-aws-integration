@@ -111,6 +111,8 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 3. Verify the AWS account appears in the list with Type 'Agentless Workload Scanning'
    - You may need to refresh the browser to see the new integration.
 
+![FortiCNAPP Cloud accounts showing Agentless Workload Scanning integration](images/forticnapp-agentless-verified.png)
+
 ## Expected Results
 
 - CloudFormation stack successfully deployed in AWS
