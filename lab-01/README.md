@@ -145,6 +145,7 @@
 1. Navigate to **Risk Center** > **Attack Path** > **Top Work Items** in the left navigation panel
 
 ![Attack Path Top Work Items](images/forticnapp-attack-paths.png)
+
 2. In the **Top risky paths with exposed secrets** section, select an entry from the table
 3. Click **View Attack Path** in the **Action** column
 
