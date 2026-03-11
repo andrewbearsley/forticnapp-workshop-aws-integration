@@ -38,7 +38,8 @@
 
 #### Resource Inventory
 
-*Which EC2 instances have the highest security risk based on vulnerability counts, and how can this help prioritize remediation efforts?*
+*Which EC2 instances have the highest security risk based on vulnerability counts?*
+*How can this help prioritize remediation efforts?*
 
 1. Navigate to **Discovery** > **Resource Inventory** in the left navigation panel
 2. Filter by **Resource Type = ec2:instance** using the filter dropdown
@@ -49,7 +50,8 @@
 
 #### Explorer
 
-*How can we combine multiple security insights using Explorer to build custom queries and visualize relationships between hosts and attack paths?*
+*How can we combine multiple security insights using Explorer to build custom queries?*
+*How can we visualize relationships between hosts and attack paths?*
 
 1. Navigate to **Discovery** > **Explorer** in the left navigation panel
 2. Click **Build your own query**
@@ -96,7 +98,8 @@
 
 #### Alerts
 
-*How does FortiCNAPP detect and present security incidents, and how can this help us respond effectively to real-world security events?*
+*How does FortiCNAPP detect and present security incidents?*
+*How can this help us respond effectively to real-world security events?*
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
 2. Filter by **past 6 months** using the date range selector
@@ -197,7 +200,8 @@
 
 #### Vulnerabilities
 
-*How can we identify and prioritize vulnerabilities across cloud resources? Why does filtering by active packages help focus on more critical vulnerabilities?*
+*How can we identify and prioritize vulnerabilities across cloud resources?*
+*Why does filtering by active packages help focus on more critical vulnerabilities?*
 
 1. Navigate to **Risk Center** > **Vulnerabilities** > **Vulnerabilities[New]** in the left navigation panel
 2. Click **Explore: Hosts**
@@ -212,7 +216,8 @@
 
 #### Code Security
 
-*How can we review code security findings and software composition analysis results? How does FortiCNAPP scan Infrastructure as Code (IaC) and application code to find misconfigurations and hard-coded secrets before they reach production?*
+*How can we review code security findings and software composition analysis results?*
+*How does FortiCNAPP scan Infrastructure as Code (IaC) and application code to find misconfigurations and hard-coded secrets before they reach production?*
 
 1. Navigate to **Risk Center** > **Code Security** > **Infrastructure (IaC)** in the left navigation panel
 2. Choose a repository from the list
