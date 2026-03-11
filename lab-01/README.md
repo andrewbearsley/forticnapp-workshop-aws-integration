@@ -147,6 +147,9 @@
 ![Attack Path Top Work Items](images/forticnapp-attack-paths.png)
 2. In the **Top risky paths with exposed secrets** section, select an entry from the table
 3. Click **View Attack Path** in the **Action** column
+
+![Attack path investigation showing exposure polygraph](images/forticnapp-attack-path-investigation.png)
+
 4. Investigate the attack path and answer the following questions:
    - What secret is exposed on the EC2 instance?
    - What compliance violations are present?
