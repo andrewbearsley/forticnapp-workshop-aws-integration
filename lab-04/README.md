@@ -46,6 +46,8 @@ curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | bas
 
 This will download and install the Lacework CLI tool to your home bin directory.
 
+![CloudShell showing Lacework CLI successfully installed](images/cloudshell-lacework-cli-installed.png)
+
 ### Step 4: Create Service User in FortiCNAPP
 
 Before creating an API key, you need to create a new service user with the appropriate permissions:
