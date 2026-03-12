@@ -1,4 +1,4 @@
-# Lab 7: Clean Up!
+# Lab 7: Clean Up CloudFormation and EC2 Instances
 
 ## Objectives
 
