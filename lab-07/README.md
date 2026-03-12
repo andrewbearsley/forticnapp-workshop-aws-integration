@@ -99,5 +99,5 @@ The CloudFormation stack deletion does not automatically remove S3 buckets that 
 
 We cleaned up all the AWS resources created during the workshop. Deleting the CloudFormation stacks removes the CloudTrail trails, ECS clusters, and associated resources. Terminating the EC2 instances stops any running agents and associated costs. Deleting the S3 buckets removes the stored CloudTrail logs - this step is required because CloudFormation won't delete buckets that contain data.
 
-This is important - leaving workshop resources running in AWS will incur ongoing charges. Always clean up after a lab.
+This is important - leaving workshop resources running in AWS will incur ongoing charges. Nice work!
 
