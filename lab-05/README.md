@@ -19,6 +19,9 @@
 ### Step 2: Create Linux EC2 Instance
 
 1. Navigate to **EC2** service in AWS Console
+
+![EC2 dashboard with Launch Instance button](images/aws-ec2-pre-launch.png)
+
 2. Click **Launch Instance**
 3. Configure the instance:
    - **Name**: Enter a name (e.g., `FortiCNAPP-Linux-Agent`)
