@@ -87,20 +87,10 @@ Enter your FortiCNAPP account credentials when prompted. These values are taken 
 - **API Secret**: The `secret` value from the JSON file
 - **Sub-Account** (if prompted): The `subAccount` value from the JSON file
 
-### Step 6: Verify CLI Installation
+### Step 6: Verify CLI Installation and List Integrations
 
 ```bash
 lacework version
-lacework api get /api/v2/UserProfile
-```
-
-The second command should return your user profile information, confirming the CLI is properly configured and connected.
-
-### Step 7: List Cloud Account Integrations
-
-Verify that the integrations from Labs 2 and 3 are visible:
-
-```bash
 lacework cloud-account list
 ```
 
@@ -109,7 +99,7 @@ You should see entries for your AWS account including:
 - `AwsCtSqs` (CloudTrail integration from Lab 2)
 - `AwsSidekick` (Agentless Workload Scanning from Lab 3, if completed)
 
-### Step 8: Trigger Inventory Scan
+### Step 7: Trigger Inventory Scan
 
 Normally, FortiCNAPP collects resource inventory on a scheduled cycle (up to 24 hours). To avoid waiting, you can trigger an immediate scan.
 
