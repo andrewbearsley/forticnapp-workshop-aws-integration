@@ -127,9 +127,9 @@ cat sbom.json
 
 ## What did we do here?
 
-- Installed the Lacework SCA scanning component
-- Scanned application code for vulnerabilities, hard-coded credentials, and license risks
-- Generated a Software Bill of Materials (SBOM) in CycloneDX JSON format for compliance and supply chain security
+We scanned application code for security issues - not infrastructure this time, but the application itself. The SCA scanner found vulnerabilities in third-party packages (CVEs), hard-coded credentials, SQL injection risks, and license compliance issues.
+
+We also generated a Software Bill of Materials (SBOM). This is increasingly required for compliance and supply chain security - it's a complete inventory of every dependency in your application and its version. When the next Log4j-style vulnerability drops, you can instantly check which of your applications are affected.
 
 ## Additional Resources
 

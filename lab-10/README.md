@@ -96,9 +96,9 @@ Review the findings and note:
 
 ## What did we do here?
 
-- Installed the Lacework IaC scanning component
-- Scanned Terraform code for security misconfigurations and vulnerabilities
-- Reviewed findings categorized by severity, identifying 100+ intentional security issues in the example repository
+We shifted security left by scanning Terraform code before it gets deployed. The IaC scanner analysed the example repository and found over 100 security issues - things like unencrypted storage, overly permissive security groups, and missing access controls.
+
+The point is to catch these misconfigurations in code, not in production. If this were part of a CI/CD pipeline, those findings would show up as pull request comments before the code ever reaches AWS. Fix it in the code, not after the breach.
 
 ## Additional Resources
 

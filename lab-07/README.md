@@ -69,7 +69,7 @@
 
 ## What did we do here?
 
-- Deleted CloudFormation stacks from Labs 2 and 3, removing all associated AWS resources
-- Terminated EC2 instances from Labs 5 and 6
-- Verified all workshop resources have been cleaned up
+We cleaned up all the AWS resources created during the workshop. Deleting the CloudFormation stacks automatically removes the IAM roles, CloudTrail trails, S3 buckets, and ECS clusters they created. Terminating the EC2 instances stops any running agents and associated costs.
+
+This is important - leaving workshop resources running in AWS will incur ongoing charges. Always clean up after a lab.
 

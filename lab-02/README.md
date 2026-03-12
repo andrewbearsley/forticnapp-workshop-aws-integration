@@ -120,5 +120,6 @@ After the stack creation is complete, review the resources that were created:
 
 ## What did we do here?
 
-- Deployed a CloudFormation stack that created a CloudTrail trail, SNS notifications, an S3 bucket for logs, and a cross-account IAM role
-- Integrated AWS Configuration and CloudTrail with FortiCNAPP, enabling resource inventory collection and API activity monitoring
+We connected FortiCNAPP to our AWS account using CloudFormation. One stack deployed everything needed: a CloudTrail trail to capture API activity, an S3 bucket for log storage, SNS notifications to alert FortiCNAPP when new logs arrive, and a cross-account IAM role so FortiCNAPP can read our configuration.
+
+This is the foundation for everything else. Configuration integration gives FortiCNAPP visibility into what resources exist (for compliance and inventory). CloudTrail integration gives it visibility into what's happening (for threat detection and alerts). Without these two, FortiCNAPP is flying blind.

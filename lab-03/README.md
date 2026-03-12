@@ -115,5 +115,6 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 
 ## What did we do here?
 
-- Deployed a CloudFormation stack that created an ECS cluster with scheduled scanning tasks
-- Integrated Agentless Workload Scanning with FortiCNAPP, enabling vulnerability and secret scanning of EC2 instances without installing an agent
+We added agentless workload scanning to our AWS account. The CloudFormation stack deployed an ECS cluster that runs scheduled scanning tasks - it takes snapshots of your EC2 instance volumes and scans them for vulnerabilities and secrets, without installing anything on the instances themselves.
+
+This is great for environments where you can't or don't want to install agents. You get vulnerability and secret detection across your fleet with zero footprint on the workloads. The trade-off is that it runs on a schedule (default 24 hours) rather than continuously, so it's complementary to agent-based monitoring rather than a replacement.

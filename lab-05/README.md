@@ -130,6 +130,6 @@ Look for your Linux instance hostname in the output. If you don't see it yet, th
 
 ## What did we do here?
 
-- Launched a Linux EC2 instance and connected via EC2 Instance Connect
-- Installed the FortiCNAPP agent (datacollector) using the installation script
-- Verified the agent is running locally and confirmed it will check in to FortiCNAPP
+We installed the FortiCNAPP agent (datacollector) on a Linux EC2 instance. The agent continuously monitors the host - processes, network connections, file changes, user activity - and streams that data to FortiCNAPP to build a behavioural baseline.
+
+This is the agent-based approach to workload security. Unlike the agentless scanning from Lab 3 (which runs on a schedule), the agent provides continuous, real-time visibility. It's how FortiCNAPP detects anomalies like unexpected processes, suspicious network connections, or lateral movement.

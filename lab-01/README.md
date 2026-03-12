@@ -34,9 +34,7 @@
 
 #### What did we do here?
 
-- Logged into the FortiCNAPP demo environment
-- Selected the FORTIDEMO tenant
-- Reviewed the main dashboard
+We logged into the FortiCNAPP demo environment and selected the FORTIDEMO tenant. This tenant has existing cloud integrations and data, so we can explore real security findings without waiting for data to populate.
 
 ### Step 2: Explore Discovery Features
 
@@ -106,9 +104,9 @@ Search provides instant lookup of any known asset, showing its connections, proc
 
 #### What did we do here?
 
-- Used Resource Inventory to identify the riskiest EC2 instances by vulnerability count
-- Built a custom Explorer query to find internet-exposed hosts and visualized their relationships
-- Used Search to look up the datacollector agent and review its resource consumption
+We used three different ways to answer the question "what's in my environment?" Resource Inventory gave us a prioritized list of EC2 instances sorted by vulnerability count, so we know which ones to fix first. Explorer let us build a custom query to find internet-exposed hosts and then visualize how they connect to other resources - this is how you spot toxic combinations like an internet-facing host with exposed secrets. Search let us quickly look up a specific application and see exactly what it's doing - connections, processes, CPU, memory.
+
+The key takeaway: FortiCNAPP doesn't just list your resources. It gives you the context to understand which ones are actually risky.
 
 ### Step 3: Explore Threat Center Features
 
@@ -163,10 +161,9 @@ The Kubernetes dashboard shows pod, container, and network activity across names
 
 #### What did we do here?
 
-- Investigated a Potentially Compromised AWS Keys alert and reviewed the timeline of events
-- Used AI Assist to triage the alert
-- Explored the Hosts polygraph to understand normal process and network activity
-- Reviewed Kubernetes pod and network activity
+We investigated a real security incident - compromised AWS keys - and walked through the timeline of how an attacker progressed through the environment. AI Assist triaged the alert so we didn't have to piece it together manually.
+
+We also explored the Hosts polygraph, which is FortiCNAPP's hourly map of what's running across your environment. This is how it learns what "normal" looks like, so it can flag when something changes. Same idea for Kubernetes - visibility into pod and network activity across clusters.
 
 ### Step 4: Explore Risk Center Features
 
@@ -276,11 +273,11 @@ Code Security scans Infrastructure as Code and application source for misconfigu
 
 #### What did we do here?
 
-- Traced an attack path from exposed secrets through to exploitable assets
-- Reviewed compliance against CIS AWS Foundations Benchmark and identified non-compliant S3 buckets
-- Analysed identity risks by comparing granted vs. used entitlements
-- Filtered vulnerabilities by active packages to focus on what actually matters
-- Found hard-coded AWS credentials in application source code using Code Security
+We looked at risk from five different angles. Attack path showed us how an attacker could chain together an exposed secret, an open security group, and an over-permissioned identity to reach critical assets. Compliance told us which S3 buckets aren't meeting CIS benchmarks. Identities revealed which roles have far more permissions than they actually use - prime targets for least-privilege cleanup.
+
+For vulnerabilities, we filtered by active packages. This is a big deal: instead of drowning in thousands of CVEs, we focused on the ones where the vulnerable package is actually running. That's the difference between a theoretical risk and a real one.
+
+Finally, Code Security found hard-coded AWS credentials published in application source code - the kind of thing that leads to the compromised keys alert we investigated earlier.
 
 ### Step 5: Explore Governance Features
 
@@ -305,7 +302,7 @@ Policies define the rules FortiCNAPP uses to detect risks and threats, and can b
 
 #### What did we do here?
 
-- Reviewed built-in policies across Compliance, Threats, Vulnerabilities, and Anomalies categories
+We reviewed the policies that drive everything we've seen so far. Every alert, compliance violation, and vulnerability finding is backed by a policy. These can be customised, enabled, disabled, or extended with custom policies - so you control exactly what gets flagged in your environment.
 
 ### Step 6: Configure Settings
 
@@ -324,6 +321,5 @@ Policies define the rules FortiCNAPP uses to detect risks and threats, and can b
 
 #### What did we do here?
 
-- Switched to the FORTINETAPACDEMO tenant for the remaining labs
-- Disabled default email notifications
+We switched to the FORTINETAPACDEMO tenant, which is where we'll do the hands-on integration work in the remaining labs. We also disabled the default email notifications so the demo environment doesn't flood your inbox.
 

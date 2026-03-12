@@ -143,7 +143,6 @@ Look for your Windows instance hostname in the output. If you don't see it yet, 
 
 ## What did we do here?
 
-- Launched a Windows EC2 instance and connected via RDP
-- Installed the FortiCNAPP agent (LWDataCollector) using the PowerShell installation script
-- Verified the agent service is running and log files are being generated
-- Confirmed the agent will check in to FortiCNAPP
+We installed the FortiCNAPP agent on a Windows EC2 instance - the same concept as Lab 5, but for Windows workloads. The agent runs as the LWDataCollector service and provides the same continuous monitoring: processes, network connections, file changes, and user activity.
+
+The installation process is different (PowerShell script + MSI package instead of a bash script), but the result is the same - real-time workload visibility in FortiCNAPP. This matters because most enterprise environments run a mix of Linux and Windows, and you need coverage across both.
