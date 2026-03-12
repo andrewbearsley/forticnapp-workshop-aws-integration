@@ -60,6 +60,9 @@
 ### Step 4: Connect to Linux EC2 Instance
 
 1. In AWS Console, navigate to **EC2** service
+
+![EC2 dashboard showing 1 running instance](images/aws-ec2-find-running-instance.png)
+
 2. Click on **Instances** in the left navigation
 3. Select the Linux EC2 instance you just created
 4. Click **Connect**
