@@ -68,14 +68,6 @@ Run the SCA scan on the current directory:
 lacework sca scan .
 ```
 
-This will:
-- Analyze the application code and dependencies
-- Detect vulnerabilities in third-party packages
-- Identify security weaknesses (CWEs)
-- Detect hard-coded secrets and credentials
-- Identify license risks
-- Display findings in the terminal
-
 ### Step 7: Review Scan Results
 
 The scan output will show:
