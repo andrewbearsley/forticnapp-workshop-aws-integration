@@ -10,6 +10,9 @@
 
 1. Navigate to <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
 2. Click **Sign into console**
+
+![AWS IAM sign-in page](images/aws-signin.png)
+
 3. **IMPORTANT:** After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
    - This step is critical - the CloudFormation template will deploy to whatever region is selected
    - If you skip this step, resources will be created in the wrong region
