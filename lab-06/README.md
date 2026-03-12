@@ -40,6 +40,8 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
 4. **Network settings**:
    - Use default
    - The default security group will allow RDP traffic, providing access to your instance
+![Instance type, key pair, and network settings](images/aws-ec2-launch-details-2.png)
+
 5. **Configure storage**: Leave default (30 GB gp3)
 6. Click **Launch Instance**
 7. Wait for the instance to reach **Running** status
