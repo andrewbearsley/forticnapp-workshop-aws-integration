@@ -6,9 +6,7 @@ Before we start integrating anything, let's get familiar with what FortiCNAPP ac
 
 ## Prerequisites
 
-- Email address for sign-in
-- Web browser
-- Access to email inbox for sign-in link
+- Email address added to the FortiCNAPP demo environment
 
 ## Lab Steps
 
@@ -42,7 +40,7 @@ FortiCNAPP's Discovery features provide visibility into cloud resources, their r
 
 #### Resource Inventory
 
-*"I don't know what cloud resources I have, or which ones are riskiest."*
+*"What cloud resources do we have, and which ones are riskiest?"*
 
 Resource Inventory shows all cloud resources across accounts with vulnerability counts, misconfigurations, and risk context to prioritize remediation.
 
@@ -281,13 +279,7 @@ Finally, Code Security found hard-coded AWS credentials published in application
 
 *"What rules govern what FortiCNAPP detects?"*
 
-Governance manages the built-in and custom policies that drive risk detection and threat alerts.
-
-#### Policies
-
-*"How do I control what gets flagged?"*
-
-Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.
+Governance manages the built-in and custom policies that drive risk detection and threat alerts. Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.
 
 1. Navigate to **Governance** > **Policies** in the left navigation panel
 
@@ -300,7 +292,7 @@ Policies define the rules FortiCNAPP uses to detect risks and threats, and can b
 
 #### What did we do here?
 
-We reviewed the policies that drive everything we've seen so far. Every alert, compliance violation, and vulnerability finding is backed by a policy. These can be customised, enabled, disabled, or extended with custom policies - so you control exactly what gets flagged in your environment.
+We reviewed the policies that drive everything we've seen so far. Every policy-based activity alert and compliance violation is backed by a policy. These can be customised, enabled, disabled, or extended with custom policies - so you control exactly what gets flagged in your environment.
 
 ### Step 6: Configure Settings
 
