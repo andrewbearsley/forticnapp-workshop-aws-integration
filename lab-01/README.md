@@ -100,7 +100,7 @@ Search provides instant lookup of any known asset, showing its connections, proc
 
 ### Step 3: Explore Threat Center Features
 
-*"Something happened in my environment — how do I investigate and respond?"*
+*"Something happened in my environment - how do I investigate and respond?"*
 
 Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.
 
@@ -220,7 +220,7 @@ Identities compares granted vs. used entitlements to help enforce least privileg
 
 #### Vulnerabilities
 
-*"I have thousands of vulnerabilities — which ones actually matter?"*
+*"I have thousands of vulnerabilities - which ones actually matter?"*
 
 Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.
 
