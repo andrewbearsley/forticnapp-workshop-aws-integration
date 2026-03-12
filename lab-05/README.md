@@ -41,6 +41,8 @@
 
 7. Wait for the instance to reach **Running** status
 
+![EC2 instance in Running state](images/aws-ec2-instance-running.png)
+
 ### Step 3: Get Agent Installation URL from FortiCNAPP
 
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
