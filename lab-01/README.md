@@ -34,11 +34,15 @@
 
 ### Step 2: Explore Discovery Features
 
-*"What exists in my cloud environment, and what should I worry about first?" FortiCNAPP's Discovery features provide visibility into cloud resources, their relationships, and their risk context.*
+*"What exists in my cloud environment, and what should I worry about first?"*
+
+**FortiCNAPP's Discovery features provide visibility into cloud resources, their relationships, and their risk context.**
 
 #### Resource Inventory
 
-*"I don't know what cloud resources I have, or which ones are riskiest." Resource Inventory shows all cloud resources across accounts with vulnerability counts, misconfigurations, and risk context to prioritize remediation.*
+*"I don't know what cloud resources I have, or which ones are riskiest."*
+
+**Resource Inventory shows all cloud resources across accounts with vulnerability counts, misconfigurations, and risk context to prioritize remediation.**
 
 1. Navigate to **Discovery** > **Resource Inventory** in the left navigation panel
 2. Filter by **Resource Type = ec2:instance** using the filter dropdown
@@ -49,7 +53,9 @@
 
 #### Explorer
 
-*"How do my cloud resources relate to each other, and where are the toxic combinations?" Explorer lets you build custom queries and visualize relationships between resources, identities, and attack paths.*
+*"How do my cloud resources relate to each other, and where are the toxic combinations?"*
+
+**Explorer lets you build custom queries and visualize relationships between resources, identities, and attack paths.**
 
 1. Navigate to **Discovery** > **Explorer** in the left navigation panel
 2. Click **Build your own query**
@@ -70,7 +76,9 @@
 
 #### Search
 
-*"I want to quickly look up a specific asset and understand what it's doing." Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.*
+*"I want to quickly look up a specific asset and understand what it's doing."*
+
+**Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.**
 
 *Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend? FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.*
 
@@ -92,11 +100,15 @@
 
 ### Step 3: Explore Threat Center Features
 
-*"Something happened in my environment — how do I investigate and respond?" Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.*
+*"Something happened in my environment — how do I investigate and respond?"*
+
+**Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.**
 
 #### Alerts
 
-*"How do I know when something suspicious happens, and what do I do about it?" Alerts notify you of security incidents with severity, timeline of events, and AI-assisted triage to guide response.*
+*"How do I know when something suspicious happens, and what do I do about it?"*
+
+**Alerts notify you of security incidents with severity, timeline of events, and AI-assisted triage to guide response.**
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
 2. Filter by **past 6 months** using the date range selector
@@ -114,7 +126,9 @@
 
 #### Workloads - Hosts
 
-*"What's running on my hosts and what does normal look like?" The Hosts dashboard builds an hourly baseline of process and network activity, making it easy to spot anomalies.*
+*"What's running on my hosts and what does normal look like?"*
+
+**The Hosts dashboard builds an hourly baseline of process and network activity, making it easy to spot anomalies.**
 
 1. Navigate to **Threat Center** > **Workloads** > **Hosts** in the left navigation panel
 2. Scroll down to view the polygraph visualization
@@ -126,7 +140,9 @@
 
 #### Workloads - Kubernetes
 
-*"What's happening inside my Kubernetes clusters?" The Kubernetes dashboard shows pod, container, and network activity across namespaces and clusters.*
+*"What's happening inside my Kubernetes clusters?"*
+
+**The Kubernetes dashboard shows pod, container, and network activity across namespaces and clusters.**
 
 1. Navigate to **Threat Center** > **Workloads** > **Kubernetes** in the left navigation panel
 2. Click on the **Pod Network** tab to see process activity within the Kubernetes cluster
@@ -135,11 +151,15 @@
 
 ### Step 4: Explore Risk Center Features
 
-*"Where are the biggest risks in my environment, and what should I fix first?" Risk Center analyzes attack paths, compliance, identities, vulnerabilities, and code security.*
+*"Where are the biggest risks in my environment, and what should I fix first?"*
+
+**Risk Center analyzes attack paths, compliance, identities, vulnerabilities, and code security.**
 
 #### Attack Path
 
-*"How could an attacker move through my environment?" Attack path analysis correlates vulnerabilities, network exposure, secrets, and IAM permissions to show exploitable paths to critical assets.*
+*"How could an attacker move through my environment?"*
+
+**Attack path analysis correlates vulnerabilities, network exposure, secrets, and IAM permissions to show exploitable paths to critical assets.**
 
 1. Navigate to **Risk Center** > **Attack Path** > **Top Work Items** in the left navigation panel
 
@@ -164,7 +184,9 @@
 
 #### Compliance
 
-*"Are we meeting security frameworks like CIS, PCI DSS, and HIPAA?" Cloud compliance provides daily assessments against industry benchmarks, showing compliant and non-compliant resources.*
+*"Are we meeting security frameworks like CIS, PCI DSS, and HIPAA?"*
+
+**Cloud compliance provides daily assessments against industry benchmarks, showing compliant and non-compliant resources.**
 
 1. Navigate to **Risk Center** > **Compliance** > **Cloud** in the left navigation panel
 
@@ -184,7 +206,9 @@
 
 #### Identities
 
-*"Which identities have excessive permissions?" Identities compares granted vs. used entitlements to help enforce least privilege across cloud users, roles, and groups.*
+*"Which identities have excessive permissions?"*
+
+**Identities compares granted vs. used entitlements to help enforce least privilege across cloud users, roles, and groups.**
 
 1. Navigate to **Risk Center** > **Identities** in the left navigation panel
 2. Select the **Top identity risks** tab
@@ -196,7 +220,9 @@
 
 #### Vulnerabilities
 
-*"I have thousands of vulnerabilities — which ones actually matter?" Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.*
+*"I have thousands of vulnerabilities — which ones actually matter?"*
+
+**Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.**
 
 1. Navigate to **Risk Center** > **Vulnerabilities** > **Vulnerabilities[New]** in the left navigation panel
 2. Click **Explore: Hosts**
@@ -211,7 +237,9 @@
 
 #### Code Security
 
-*"Are there misconfigurations or secrets in our code before we deploy?" Code Security scans Infrastructure as Code and application source for misconfigurations, vulnerabilities, and hard-coded secrets.*
+*"Are there misconfigurations or secrets in our code before we deploy?"*
+
+**Code Security scans Infrastructure as Code and application source for misconfigurations, vulnerabilities, and hard-coded secrets.**
 
 1. Navigate to **Risk Center** > **Code Security** > **Infrastructure (IaC)** in the left navigation panel
 2. Choose a repository from the list
@@ -229,11 +257,15 @@
 
 ### Step 5: Explore Governance Features
 
-*"What rules govern what FortiCNAPP detects?" Governance manages the built-in and custom policies that drive risk detection and threat alerts.*
+*"What rules govern what FortiCNAPP detects?"*
+
+**Governance manages the built-in and custom policies that drive risk detection and threat alerts.**
 
 #### Policies
 
-*"How do I control what gets flagged?" Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.*
+*"How do I control what gets flagged?"*
+
+**Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.**
 
 1. Navigate to **Governance** > **Policies** in the left navigation panel
 
