@@ -48,7 +48,7 @@
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Ensure tenant is set to **FORTINETAPACDEMO**
 3. Navigate to **Settings** > **Configuration** > **Agent tokens**
-4. Find an existing Linux agent token in the list
+4. Find the **AWS Lab - Linux** agent token in the list
 5. Click the **Actions** ellipsis (three dots) for the token
 6. Select **Install**
 7. In the installation panel, expand **Lacework Script (recommended)**
