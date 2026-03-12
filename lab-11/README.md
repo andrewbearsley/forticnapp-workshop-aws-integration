@@ -74,7 +74,6 @@ This will:
 - Identify security weaknesses (CWEs)
 - Detect hard-coded secrets and credentials
 - Identify license risks
-- Upload the scan results to FortiCNAPP
 - Display findings in the terminal
 
 ### Step 7: Review Scan Results
