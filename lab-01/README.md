@@ -34,7 +34,7 @@
 
 ### Step 2: Explore Discovery Features
 
-*How can we use Discovery features to identify security risks and investigate application behavior in the cloud environment?*
+*How can we discover what exists in our cloud environment, and prioritise by riskiest assets?*
 
 #### Resource Inventory
 
