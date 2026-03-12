@@ -36,6 +36,9 @@
    - The default security group will allow SSH traffic, providing external access to your instance
 5. **Configure storage**: Leave default (8 GB gp3)
 6. Click **Launch Instance**
+
+![Proceed without a key pair dialog](images/aws-ec2-launch-no-keypair.png)
+
 7. Wait for the instance to reach **Running** status
 
 ### Step 3: Get Agent Installation URL from FortiCNAPP
