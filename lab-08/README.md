@@ -87,17 +87,16 @@ Enter your FortiCNAPP account credentials when prompted. These values are taken 
 - **API Secret**: The `secret` value from the JSON file
 - **Sub-Account** (if prompted): The `subAccount` value from the JSON file
 
-### Step 6: Verify CLI Installation and List Integrations
+### Step 6: Verify CLI Installation
 
 ```bash
 lacework version
-lacework cloud-account list
+lacework api get /api/v2/UserProfile
 ```
 
-You should see entries for your AWS account including:
-- `AwsCfg` (Configuration integration from Lab 2)
-- `AwsCtSqs` (CloudTrail integration from Lab 2)
-- `AwsSidekick` (Agentless Workload Scanning from Lab 3, if completed)
+The second command should return your user profile information, confirming the CLI is properly configured and connected.
+
+**Note:** If you completed Lab 7, the AWS integrations from Labs 2 and 3 have been cleaned up. We'll redeploy them using Terraform in the next lab.
 
 ### Step 7: Install Terraform
 
