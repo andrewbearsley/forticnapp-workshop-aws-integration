@@ -24,6 +24,9 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
 
 2. Click **Launch Instance**
 3. Configure the instance:
+
+![Launch an instance configuration page for Windows](images/aws-ec2-launch-details.png)
+
    - **Name**: Enter a name (e.g., `FortiCNAPP-Windows-Agent`)
    - **Application and OS Images**: Select **Microsoft Windows Server** (Windows Server 2022 or later)
    - **Instance type**: Select **c5.large**
