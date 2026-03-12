@@ -55,6 +55,9 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
 3. Select the Windows EC2 instance you just created
 4. Click **Connect**
 5. Select **RDP Client** tab
+
+![RDP client connection page with Get Password button](images/aws-ec2-rdp-connect.png)
+
 6. Click **Get Password** (you may need to wait for a few minutes after the instance is running)
 7. Upload your key pair file (.pem) to decrypt the password
 8. Copy the **Administrator password**
