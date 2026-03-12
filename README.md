@@ -26,7 +26,7 @@ Step-by-step instructions for integrating FortiCNAPP with AWS for cloud security
 - [Lab 9: Install integrations via Terraform](lab-09/README.md)
 - [Lab 10: Code Security for Infrastructure as Code (IaC)](lab-10/README.md)
 - [Lab 11: Code Security for Applications (SCA)](lab-11/README.md)
-- [Lab 12: Cleanup](lab-12/README.md)
+- [Lab 12: Clean Up Terraform-Provisioned Integrations](lab-12/README.md)
 
 ## Resources
 

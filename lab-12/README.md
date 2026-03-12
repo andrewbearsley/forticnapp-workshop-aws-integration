@@ -1,4 +1,4 @@
-# Lab 12: Cleanup
+# Lab 12: Clean Up Terraform-Provisioned Integrations
 
 This lab provides a cleanup script to remove all workshop resources from AWS CloudShell.
 
