@@ -54,7 +54,9 @@ Leaving workshop resources running in AWS costs money. In this lab, we'll delete
 2. Click on **Instances** in the left navigation
 3. Find the Linux EC2 instance you created in Lab 5 (e.g., `FortiCNAPP-Linux-Agent`)
 4. Select the instance
-5. Click **Instance state** > **Terminate instance**
+5. Click **Instance state** > **Terminate (delete) instance**
+
+![EC2 Instance state dropdown showing Terminate option](images/aws-ec2-terminate-instance.png)
 6. Confirm termination by typing `terminate` in the confirmation dialog
 7. Click **Terminate**
 
