@@ -36,7 +36,7 @@ This repository contains Terraform configurations with various security issues t
 Ensure your Lacework CLI is still configured:
 
 ```bash
-lacework api get /api/v2/UserProfile
+lacework version
 ```
 
 If you need to reconfigure, run:
