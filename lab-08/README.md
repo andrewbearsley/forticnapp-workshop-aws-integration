@@ -91,10 +91,9 @@ Enter your FortiCNAPP account credentials when prompted. These values are taken 
 
 ```bash
 lacework version
-lacework api get /api/v2/UserProfile
 ```
 
-The second command should return your user profile information, confirming the CLI is properly configured and connected.
+This should return the installed version, confirming the CLI is ready to use.
 
 **Note:** If you completed Lab 7, the AWS integrations from Labs 2 and 3 have been cleaned up. We'll redeploy them using Terraform in the next lab.
 
