@@ -26,7 +26,6 @@ Verify that the Lacework CLI is configured and working:
 
 ```bash
 lacework version
-lacework api get /api/v2/UserProfile
 ```
 
 If the CLI is not in your PATH, add it:
