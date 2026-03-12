@@ -6,7 +6,9 @@ This lab provides a cleanup script to remove all workshop resources from AWS Clo
 
 1. Open AWS CloudShell in your browser.
 
-2. Copy the entire contents of [cloudshell_cleanup.sh](cloudshell_cleanup.sh).
+2. Copy the entire contents of [cloudshell_cleanup.sh](cloudshell_cleanup.sh) using the copy button.
+
+![Copy script to clipboard from GitHub](images/github-copy-script-to-clipboard.png)
 
 3. Paste the script into the CloudShell terminal and press Enter.
 
