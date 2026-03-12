@@ -55,6 +55,8 @@
 8. Click **Copy URL** to copy the installation script URL
 9. Keep this URL ready - you'll use it in the next step
 
+![Agent tokens page showing Install panel with Copy URL button](images/forticnapp-agent-install-url.png)
+
 ### Step 4: Connect to Linux EC2 Instance
 
 1. In AWS Console, navigate to **EC2** service
