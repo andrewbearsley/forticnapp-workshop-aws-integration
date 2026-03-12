@@ -44,6 +44,8 @@ curl https://raw.githubusercontent.com/lacework/go-sdk/main/cli/install.sh | bas
 
 This will download and install the Lacework CLI tool to your home bin directory.
 
+![CloudShell showing Lacework CLI successfully installed](../lab-04/images/cloudshell-lacework-cli-installed.png)
+
 **Note**: For Windows installation (if needed outside CloudShell), download from the <a href="https://github.com/lacework/go-sdk/releases" target="_blank">Lacework CLI releases page</a>.
 
 ### Step 4: Download API Key from FortiCNAPP
@@ -56,6 +58,9 @@ An existing service user **AWS Lab** has been pre-configured with the necessary 
 4. Click on the **Service user API keys** tab
 5. Find the API key for the **AWS Lab** service user
 6. Click on the ellipsis (three dots) next to the API key and select **Download** to download the key as JSON
+
+![API keys page showing Service user API keys with Download option](../lab-04/images/forticnapp-download-api-key.png)
+
 7. Open the downloaded JSON file and note the values. Keep these credentials ready for the next step
 
 ### Step 5: Configure CLI
