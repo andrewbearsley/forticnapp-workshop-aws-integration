@@ -2,11 +2,6 @@
 
 This lab provides a cleanup script to remove all workshop resources from AWS CloudShell.
 
-## Prerequisites
-
-- AWS CloudShell access
-- AWS CLI available in CloudShell (pre-installed)
-
 ## Instructions
 
 1. Open AWS CloudShell in your browser.
