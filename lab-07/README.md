@@ -34,7 +34,10 @@ Leaving workshop resources running in AWS costs money. In this lab, we'll delete
 
 #### Delete AWS Inventory and CloudTrail Stack (from Lab 2)
 
-1. In the **CloudFormation** service, find the stack you created in Lab 2 (typically named something like `lacework-cloudtrail-config` or similar)
+1. In the **CloudFormation** service, find the stack you created in Lab 2 (e.g., `AWS-CloudTrail`)
+
+![AWS-CloudTrail stack selected for deletion](images/aws-cloudformation-delete-cloudtrail.png)
+
 2. Select the stack
 3. Click **Delete**
 4. Confirm deletion by typing the stack name in the confirmation dialog
