@@ -82,9 +82,12 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Ensure tenant is set to **FORTINETAPACDEMO**
 3. Navigate to **Settings** > **Configuration** > **Agent tokens**
-4. Find an existing Windows agent token in the list
+4. Find the **AWS Lab - Windows** agent token in the list
 5. Click the **Actions** ellipsis (three dots) for the token
 6. Select **Install**
+
+![Agent tokens page showing Install panel with Copy URL button](images/forticnapp-agent-install-url.png)
+
 7. In the installation panel:
    - Expand **Lacework PowerShell Script (recommended)** section
    - Click **Copy URL** to copy the PowerShell script ZIP URL (for downloading the script)
