@@ -2,7 +2,7 @@
 
 ## Objectives
 
-Clicking through consoles doesn't scale. In production, you'd deploy FortiCNAPP integrations using infrastructure as code. In this lab, we'll install the two tools needed for that approach: the Lacework CLI (to generate Terraform configuration) and Terraform (to deploy it). This sets up everything for the next lab.
+In Labs 2 and 3, we used CloudFormation to deploy integrations - that's one infrastructure as code approach. But many enterprises prefer Terraform since it's not AWS-specific and works across multiple cloud providers. In this lab, we'll install the two tools needed for the Terraform approach: the Lacework CLI (to generate Terraform configuration) and Terraform (to deploy it). This sets up everything for the next lab.
 
 ## Prerequisites
 
