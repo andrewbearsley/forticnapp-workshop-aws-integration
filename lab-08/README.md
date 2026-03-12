@@ -12,7 +12,7 @@
 - AWS account access
 - FortiCNAPP account credentials
 
-**Note:** If you completed Lab 4, the Lacework CLI is already installed and configured. You can skip Steps 1-7 and proceed directly to Step 8 (Install Terraform).
+**Note:** If you completed Lab 4, the Lacework CLI is already installed and configured. You can skip Steps 1-6 and proceed directly to Step 7 (Install Terraform).
 
 ## Lab Steps
 
@@ -49,40 +49,19 @@ This will download and install the Lacework CLI tool to your home bin directory.
 
 **Note**: For Windows installation (if needed outside CloudShell), download from the <a href="https://github.com/lacework/go-sdk/releases" target="_blank">Lacework CLI releases page</a>.
 
-### Step 4: Create Service User in FortiCNAPP
+### Step 4: Download API Key from FortiCNAPP
 
-Before creating an API key, you need to create a new service user with the appropriate permissions:
+An existing service user **AWS Lab** has been pre-configured with the necessary permissions. Download the API key for this user:
 
 1. Log into FortiCNAPP console at <a href="https://partner-demo.lacework.net/" target="_blank">https://partner-demo.lacework.net/</a>
 2. Ensure tenant is set to **FORTINETAPACDEMO**
-3. Navigate to **Settings** > **Access Control** > **Users**
-4. Click **Add New**
-5. Choose **User Type**: **Service User**
-6. Fill in the service user details:
-   - **Name**: Enter a name (e.g., `[Your Name] Service User`)
-   - **Description**: Enter a description (e.g., `lab-08`)
-7. Click **Next**
-8. Add the following user groups to grant the necessary permissions:
-   - **'Cloud Integrations'** - Required for AWS integration setup (Labs 8-9)
-   - **'Code Security Scanner'** - Required for code security scanning (Labs 10-11)
-9. Complete the service user creation
+3. Navigate to **Settings** > **Configuration** > **API keys**
+4. Click on the **Service user API keys** tab
+5. Find the API key for the **AWS Lab** service user
+6. Click on the ellipsis (three dots) next to the API key and select **Download** to download the key as JSON
+7. Open the downloaded JSON file and note the values. Keep these credentials ready for the next step
 
-### Step 5: Create API Key in FortiCNAPP
-
-Now create an API key attached to the service user you just created:
-
-1. Navigate to **Settings** > **Configuration** > **API keys**
-2. Click **Create API key**
-3. Fill in the API key details:
-   - **Name**: Enter a name (e.g., `service-user-api-key`)
-   - **Description**: Enter a description (e.g., `lab-08`)
-   - **Assign this to a service user**: Toggle this **ON**
-   - **Select a service user**: Choose the service user you just created (e.g., `[Your Name] Service User`)
-4. Click **Save**
-5. After saving, click on the ellipsis (three dots) next to the API key in the list and select **Download** to download the key as JSON.
-6. Open the downloaded JSON file and note the **API Key** and **API Secret** values. Keep these credentials ready for the next step
-
-### Step 6: Configure CLI
+### Step 5: Configure CLI
 
 In CloudShell, run:
 
@@ -106,7 +85,7 @@ Enter your FortiCNAPP account credentials when prompted. These values are taken 
 - **API Secret**: The `secret` value from the JSON file
 - **Sub-Account** (if prompted): The `subAccount` value from the JSON file
 
-### Step 7: Verify CLI Installation
+### Step 6: Verify CLI Installation
 
 ```bash
 lacework version
@@ -115,7 +94,7 @@ lacework api get /api/v2/UserProfile
 
 The second command should return your user profile information, confirming the CLI is properly configured and connected.
 
-### Step 8: Install Terraform
+### Step 7: Install Terraform
 
 Install Terraform in AWS CloudShell:
 
