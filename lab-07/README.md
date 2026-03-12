@@ -70,15 +70,31 @@ Leaving workshop resources running in AWS costs money. In this lab, we'll delete
 
 **Note**: Terminated instances will remain visible for a short time before being automatically removed. You may still see them in the list with a "terminated" state.
 
-### Step 4: Verify Cleanup
+### Step 4: Delete S3 Buckets
+
+The CloudFormation stack deletion does not automatically remove S3 buckets that contain data. You must delete these manually.
+
+1. Navigate to **S3** service in AWS Console
+2. Find the S3 buckets created by the workshop (look for buckets with `lacework` or `fortinetapacdemo` in the name)
+
+![S3 buckets created by the workshop](images/aws-s3-delete-buckets.png)
+
+3. For each bucket:
+   - Select the bucket
+   - Click **Empty** to remove all objects (you must empty the bucket before deleting it)
+   - Confirm by typing the bucket name
+   - Click **Delete** to delete the empty bucket
+   - Confirm by typing the bucket name
+
+### Step 5: Verify Cleanup
 
 1. In **CloudFormation**, verify that all stacks have been deleted (the list should be empty or only show other stacks not related to this workshop)
 2. In **EC2** > **Instances**, verify that your workshop instances are terminated or no longer visible
-3. Optionally, check **S3** buckets and **IAM** roles to ensure any resources created by the CloudFormation stacks have been cleaned up
+3. In **S3**, verify that all workshop buckets have been deleted
 
 ## What did we do here?
 
-We cleaned up all the AWS resources created during the workshop. Deleting the CloudFormation stacks automatically removes the IAM roles, CloudTrail trails, S3 buckets, and ECS clusters they created. Terminating the EC2 instances stops any running agents and associated costs.
+We cleaned up all the AWS resources created during the workshop. Deleting the CloudFormation stacks removes the CloudTrail trails, ECS clusters, and associated resources. Terminating the EC2 instances stops any running agents and associated costs. Deleting the S3 buckets removes the stored CloudTrail logs - this step is required because CloudFormation won't delete buckets that contain data.
 
 This is important - leaving workshop resources running in AWS will incur ongoing charges. Always clean up after a lab.
 
