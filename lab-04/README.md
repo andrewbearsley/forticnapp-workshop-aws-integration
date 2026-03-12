@@ -111,9 +111,8 @@ This triggers a resource inventory collection for all integrated AWS accounts. T
 
 **Note:** Only one scan can run at a time. If another student has already triggered a scan, your request will be ignored until the current scan completes.
 
-## Expected Results
+## What did we do here?
 
-- Lacework CLI installed and configured in AWS CloudShell
-- CLI connectivity verified with FortiCNAPP
-- AWS integrations from Labs 2 and 3 confirmed via CLI
-- Inventory scan triggered to populate compliance data
+- Installed and configured the Lacework CLI in AWS CloudShell
+- Verified CLI connectivity and confirmed AWS integrations from Labs 2 and 3
+- Triggered an inventory scan to populate compliance data without waiting for the scheduled cycle

@@ -94,12 +94,11 @@ Review the findings and note:
 - What types of security issues are present (encryption, access controls, networking, etc.)
 - Which files contain the most security issues
 
-## Expected Results
+## What did we do here?
 
-- Repository successfully cloned to CloudShell
-- IaC component installed and updated
-- Terraform code scanned for security issues
-- Multiple security findings detected (the example repository contains over 100 intentional security issues)
+- Installed the Lacework IaC scanning component
+- Scanned Terraform code for security misconfigurations and vulnerabilities
+- Reviewed findings categorized by severity, identifying 100+ intentional security issues in the example repository
 
 ## Additional Resources
 

@@ -67,8 +67,9 @@
 2. In **EC2** > **Instances**, verify that your workshop instances are terminated or no longer visible
 3. Optionally, check **S3** buckets and **IAM** roles to ensure any resources created by the CloudFormation stacks have been cleaned up
 
-## Expected Results
+## What did we do here?
 
-- All CloudFormation stacks from Labs 2 and 3 deleted
-- All EC2 instances from Labs 5 and 6 terminated
+- Deleted CloudFormation stacks from Labs 2 and 3, removing all associated AWS resources
+- Terminated EC2 instances from Labs 5 and 6
+- Verified all workshop resources have been cleaned up
 

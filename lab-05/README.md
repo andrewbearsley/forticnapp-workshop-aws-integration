@@ -128,7 +128,8 @@ Look for your Linux instance hostname in the output. If you don't see it yet, th
 
 **Note:** The local `datacollector -status` check (Step 6) confirms the agent is running on the instance. The `lacework agent list` command confirms FortiCNAPP has received the agent's check-in.
 
-## Expected Results
+## What did we do here?
 
-- Agent installed and running on Linux instance
-- Agent visible in FortiCNAPP (after first check-in)
+- Launched a Linux EC2 instance and connected via EC2 Instance Connect
+- Installed the FortiCNAPP agent (datacollector) using the installation script
+- Verified the agent is running locally and confirmed it will check in to FortiCNAPP

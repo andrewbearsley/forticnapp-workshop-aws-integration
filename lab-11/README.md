@@ -125,14 +125,11 @@ View the generated SBOM:
 cat sbom.json
 ```
 
-## Expected Results
+## What did we do here?
 
-- Repository successfully cloned to CloudShell
-- SCA component installed and updated
-- Application code scanned for security issues
-- Multiple vulnerabilities detected (the example repository contains intentional security issues including CVEs, hard-coded credentials, and license risks)
-- SBOM generated successfully in CycloneDX JSON format
-- Findings categorized by severity and type (vulnerabilities, weaknesses, licenses)
+- Installed the Lacework SCA scanning component
+- Scanned application code for vulnerabilities, hard-coded credentials, and license risks
+- Generated a Software Bill of Materials (SBOM) in CycloneDX JSON format for compliance and supply chain security
 
 ## Additional Resources
 

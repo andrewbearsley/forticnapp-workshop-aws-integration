@@ -118,11 +118,7 @@ After the stack creation is complete, review the resources that were created:
 
 ![FortiCNAPP Cloud accounts showing new AWS integration](images/forticnapp-new-integration.png)
 
-## Expected Results
+## What did we do here?
 
-- CloudFormation stack successfully deployed in AWS
-- CloudTrail trail created with name ending in `-laceworkcws`
-- CloudTrail SNS notification delivery enabled
-- CloudTrail log location (S3 bucket) identified
-- IAM role created and reviewed
-- AWS CloudTrail and Configuration integrated with FortiCNAPP
+- Deployed a CloudFormation stack that created a CloudTrail trail, SNS notifications, an S3 bucket for logs, and a cross-account IAM role
+- Integrated AWS Configuration and CloudTrail with FortiCNAPP, enabling resource inventory collection and API activity monitoring

@@ -113,7 +113,7 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 
 ![FortiCNAPP Cloud accounts showing Agentless Workload Scanning integration](images/forticnapp-agentless-verified.png)
 
-## Expected Results
+## What did we do here?
 
-- CloudFormation stack successfully deployed in AWS
-- Agentless Workload Scanning integrated with FortiCNAPP
+- Deployed a CloudFormation stack that created an ECS cluster with scheduled scanning tasks
+- Integrated Agentless Workload Scanning with FortiCNAPP, enabling vulnerability and secret scanning of EC2 instances without installing an agent

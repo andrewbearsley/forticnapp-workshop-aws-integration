@@ -32,6 +32,12 @@
 
 7. Review the main dashboard
 
+#### What did we do here?
+
+- Logged into the FortiCNAPP demo environment
+- Selected the FORTIDEMO tenant
+- Reviewed the main dashboard
+
 ### Step 2: Explore Discovery Features
 
 *"What exists in my cloud environment, and what should I worry about first?"*
@@ -98,6 +104,12 @@ Search provides instant lookup of any known asset, showing its connections, proc
 
 ![Datacollector application details showing memory and CPU usage](images/forticnapp-search-datacollector.png)
 
+#### What did we do here?
+
+- Used Resource Inventory to identify the riskiest EC2 instances by vulnerability count
+- Built a custom Explorer query to find internet-exposed hosts and visualized their relationships
+- Used Search to look up the datacollector agent and review its resource consumption
+
 ### Step 3: Explore Threat Center Features
 
 *"Something happened in my environment - how do I investigate and respond?"*
@@ -148,6 +160,13 @@ The Kubernetes dashboard shows pod, container, and network activity across names
 2. Click on the **Pod Network** tab to see process activity within the Kubernetes cluster
 
 ![Workloads Kubernetes resources view](images/forticnapp-workload-kubernetes.png)
+
+#### What did we do here?
+
+- Investigated a Potentially Compromised AWS Keys alert and reviewed the timeline of events
+- Used AI Assist to triage the alert
+- Explored the Hosts polygraph to understand normal process and network activity
+- Reviewed Kubernetes pod and network activity
 
 ### Step 4: Explore Risk Center Features
 
@@ -255,6 +274,14 @@ Code Security scans Infrastructure as Code and application source for misconfigu
 6. Click on **Aws Credentials**
 7. Find the code where the access key has been published
 
+#### What did we do here?
+
+- Traced an attack path from exposed secrets through to exploitable assets
+- Reviewed compliance against CIS AWS Foundations Benchmark and identified non-compliant S3 buckets
+- Analysed identity risks by comparing granted vs. used entitlements
+- Filtered vulnerabilities by active packages to focus on what actually matters
+- Found hard-coded AWS credentials in application source code using Code Security
+
 ### Step 5: Explore Governance Features
 
 *"What rules govern what FortiCNAPP detects?"*
@@ -276,6 +303,10 @@ Policies define the rules FortiCNAPP uses to detect risks and threats, and can b
 4. Review policies in the **Vulnerabilities: Build time** tab (Build and Runtime)
 5. Review policies in the **Anomalies** tab
 
+#### What did we do here?
+
+- Reviewed built-in policies across Compliance, Threats, Vulnerabilities, and Anomalies categories
+
 ### Step 6: Configure Settings
 
 *How can we configure user settings?*
@@ -290,4 +321,9 @@ Policies define the rules FortiCNAPP uses to detect risks and threats, and can b
 2. Disable the default email notification
 
 ![My profile settings page](images/forticnapp-user-settings.png)
+
+#### What did we do here?
+
+- Switched to the FORTINETAPACDEMO tenant for the remaining labs
+- Disabled default email notifications
 

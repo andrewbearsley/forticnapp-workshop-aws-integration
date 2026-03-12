@@ -121,9 +121,9 @@ source ~/.bashrc
 **Alternative**: If you prefer to check manually, visit <a href="https://releases.hashicorp.com/terraform/" target="_blank">HashiCorp's Terraform releases page</a> and replace `${TERRAFORM_VERSION}` in the URL with the latest version number (e.g., `1.9.5`).
 
 
-## Expected Results
+## What did we do here?
 
-- Lacework CLI installed and configured in AWS CloudShell
-- CLI connectivity verified with FortiCNAPP
-- Terraform installed and accessible from command line
+- Installed and configured the Lacework CLI in AWS CloudShell
+- Verified CLI connectivity with FortiCNAPP
+- Installed Terraform, ready for deploying integrations as code in the next lab
 

@@ -241,14 +241,12 @@ cd ~
 rm -rf ~/lacework/aws
 ```
 
-## Expected Results
+## What did we do here?
 
-- Terraform configuration generated successfully using Lacework CLI
-- AWS Configuration integration deployed and active
-- AWS CloudTrail integration deployed and active
-- Integration visible in FortiCNAPP console
-- IAM roles and AWS resources created as expected
-- Resources successfully destroyed and cleaned up after lab completion
+- Used the Lacework CLI to generate Terraform configuration for AWS integration
+- Deployed CloudTrail and Configuration integrations using Terraform (46 resources including IAM roles, S3 buckets, SNS/SQS, and KMS encryption)
+- Verified the integrations in both CLI and FortiCNAPP console
+- Cleaned up all resources using `terraform destroy`
 
 
 ## Additional Resources

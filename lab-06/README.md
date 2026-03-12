@@ -141,10 +141,9 @@ lacework agent list
 
 Look for your Windows instance hostname in the output. If you don't see it yet, the agent hasn't completed its first check-in - try again later.
 
-## Expected Results
+## What did we do here?
 
-- Agent installed and running on Windows instance
-- LWDataCollector service running
-- Installation directory exists at `C:\ProgramData\Lacework\`
-- Log files present in `C:\ProgramData\Lacework\Logs\`
-- Agent visible in FortiCNAPP (after first check-in)
+- Launched a Windows EC2 instance and connected via RDP
+- Installed the FortiCNAPP agent (LWDataCollector) using the PowerShell installation script
+- Verified the agent service is running and log files are being generated
+- Confirmed the agent will check in to FortiCNAPP
