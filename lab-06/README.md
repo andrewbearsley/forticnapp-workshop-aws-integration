@@ -46,6 +46,8 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
 6. Click **Launch Instance**
 7. Wait for the instance to reach **Running** status
 
+![Windows EC2 instance in Running state](images/aws-ec2-instance-running.png)
+
 ### Step 3: Get Windows Password and Connect
 
 1. In AWS Console, navigate to **EC2** service
