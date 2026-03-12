@@ -20,7 +20,10 @@ Leaving workshop resources running in AWS costs money. In this lab, we'll delete
 #### Delete Agentless Workload Scanning Stack (from Lab 3)
 
 1. Navigate to **CloudFormation** service in AWS Console
-2. In the **Stacks** list, find the stack you created in Lab 3 (e.g., `Agentless Workload Scanning [your name]`)
+
+![CloudFormation stacks list showing Agentless Scanning and CloudTrail stacks](images/aws-cloudformation-stacks.png)
+
+2. In the **Stacks** list, find the stack you created in Lab 3 (e.g., `AWS-AgentlessScanning`)
 3. Select the stack
 4. Click **Delete**
 5. Confirm deletion by typing the stack name in the confirmation dialog
