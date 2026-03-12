@@ -28,6 +28,8 @@ Verify that the Lacework CLI is configured and working:
 lacework version
 ```
 
+![CloudShell with lacework version output](images/aws-cloudshell-lacework-version.png)
+
 ### Step 3: Generate Terraform Configuration for AWS Integration
 
 Use the Lacework CLI to generate Terraform code for AWS integration. This will create Terraform files for CloudTrail and Configuration assessment:
