@@ -66,7 +66,7 @@ Explorer lets you build custom queries and visualize relationships between resou
 
 ![Explorer query builder showing SHOW Hosts with WHERE clause](images/forticnapp-explorer-query.png)
 
-7. Review the results to see hosts that are part of attack paths
+7. Review the results to see hosts that are internet exposed
 8. For one or more hosts in the results, click **Graph** to visualize relationships
 9. Explore the graph view to understand how these hosts connect to other resources, identities, and potential attack vectors
 
