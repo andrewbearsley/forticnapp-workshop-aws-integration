@@ -2,7 +2,7 @@
 
 ## Objectives
 
-Agentless scanning (Lab 3) gives you periodic snapshots, but for continuous, real-time monitoring you need the agent. In this lab, we'll launch a Linux EC2 instance and install the FortiCNAPP agent (datacollector). Once running, it continuously streams process, network, and file activity to FortiCNAPP - this is how it builds behavioural baselines and detects anomalies.
+Agentless scanning (Lab 3) gives you periodic snapshots, but for deeper monitoring you need the agent. In this lab, we'll launch a Linux EC2 instance and install the FortiCNAPP agent (datacollector). Once running, it collects process, network, and file activity and sends it to FortiCNAPP every hour - this is how it builds behavioural baselines and detects anomalies.
 
 ## Prerequisites
 
@@ -130,6 +130,6 @@ Look for your Linux instance hostname in the output. If you don't see it yet, th
 
 ## What did we do here?
 
-We installed the FortiCNAPP agent (datacollector) on a Linux EC2 instance. The agent continuously monitors the host - processes, network connections, file changes, user activity - and streams that data to FortiCNAPP to build a behavioural baseline.
+We installed the FortiCNAPP agent (datacollector) on a Linux EC2 instance. The agent monitors the host - processes, network connections, file changes, user activity - and sends that data to FortiCNAPP every hour to build a behavioural baseline.
 
-This is the agent-based approach to workload security. Unlike the agentless scanning from Lab 3 (which runs on a schedule), the agent provides continuous, real-time visibility. It's how FortiCNAPP detects anomalies like unexpected processes, suspicious network connections, or lateral movement.
+This is the agent-based approach to workload security. Unlike the agentless scanning from Lab 3 (which takes periodic snapshots), the agent collects data continuously and reports hourly. It's how FortiCNAPP detects anomalies like unexpected processes, suspicious network connections, or lateral movement.
