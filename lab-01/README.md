@@ -36,13 +36,13 @@
 
 *"What exists in my cloud environment, and what should I worry about first?"*
 
-**FortiCNAPP's Discovery features provide visibility into cloud resources, their relationships, and their risk context.**
+FortiCNAPP's Discovery features provide visibility into cloud resources, their relationships, and their risk context.
 
 #### Resource Inventory
 
 *"I don't know what cloud resources I have, or which ones are riskiest."*
 
-**Resource Inventory shows all cloud resources across accounts with vulnerability counts, misconfigurations, and risk context to prioritize remediation.**
+Resource Inventory shows all cloud resources across accounts with vulnerability counts, misconfigurations, and risk context to prioritize remediation.
 
 1. Navigate to **Discovery** > **Resource Inventory** in the left navigation panel
 2. Filter by **Resource Type = ec2:instance** using the filter dropdown
@@ -55,13 +55,13 @@
 
 *"How do my cloud resources relate to each other, and where are the toxic combinations?"*
 
-**Explorer lets you build custom queries and visualize relationships between resources, identities, and attack paths.**
+Explorer lets you build custom queries and visualize relationships between resources, identities, and attack paths.
 
 1. Navigate to **Discovery** > **Explorer** in the left navigation panel
 2. Click **Build your own query**
 3. In the query builder, ensure **SHOW** is set to **Hosts**
 4. Click **+ Add clause**
-5. Add a **WHERE** clause: **Attack Path** = **true**
+5. Add a **WHERE** clause: **Internet Exposed** = **true**
 6. Click **Search** to execute the query
 
 ![Explorer query builder showing SHOW Hosts with WHERE clause](images/forticnapp-explorer-query.png)
@@ -78,7 +78,7 @@
 
 *"I want to quickly look up a specific asset and understand what it's doing."*
 
-**Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.**
+Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.
 
 *Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend? FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.*
 
@@ -102,13 +102,13 @@
 
 *"Something happened in my environment — how do I investigate and respond?"*
 
-**Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.**
+Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.
 
 #### Alerts
 
 *"How do I know when something suspicious happens, and what do I do about it?"*
 
-**Alerts notify you of security incidents with severity, timeline of events, and AI-assisted triage to guide response.**
+Alerts notify you of security incidents with severity, timeline of events, and AI-assisted triage to guide response.
 
 1. Navigate to **Threat Center** > **Alerts** in the left navigation panel
 2. Filter by **past 6 months** using the date range selector
@@ -128,7 +128,7 @@
 
 *"What's running on my hosts and what does normal look like?"*
 
-**The Hosts dashboard builds an hourly baseline of process and network activity, making it easy to spot anomalies.**
+The Hosts dashboard builds an hourly baseline of process and network activity, making it easy to spot anomalies.
 
 1. Navigate to **Threat Center** > **Workloads** > **Hosts** in the left navigation panel
 2. Scroll down to view the polygraph visualization
@@ -142,7 +142,7 @@
 
 *"What's happening inside my Kubernetes clusters?"*
 
-**The Kubernetes dashboard shows pod, container, and network activity across namespaces and clusters.**
+The Kubernetes dashboard shows pod, container, and network activity across namespaces and clusters.
 
 1. Navigate to **Threat Center** > **Workloads** > **Kubernetes** in the left navigation panel
 2. Click on the **Pod Network** tab to see process activity within the Kubernetes cluster
@@ -153,13 +153,13 @@
 
 *"Where are the biggest risks in my environment, and what should I fix first?"*
 
-**Risk Center analyzes attack paths, compliance, identities, vulnerabilities, and code security.**
+Risk Center analyzes attack paths, compliance, identities, vulnerabilities, and code security.
 
 #### Attack Path
 
 *"How could an attacker move through my environment?"*
 
-**Attack path analysis correlates vulnerabilities, network exposure, secrets, and IAM permissions to show exploitable paths to critical assets.**
+Attack path analysis correlates vulnerabilities, network exposure, secrets, and IAM permissions to show exploitable paths to critical assets.
 
 1. Navigate to **Risk Center** > **Attack Path** > **Top Work Items** in the left navigation panel
 
@@ -186,7 +186,7 @@
 
 *"Are we meeting security frameworks like CIS, PCI DSS, and HIPAA?"*
 
-**Cloud compliance provides daily assessments against industry benchmarks, showing compliant and non-compliant resources.**
+Cloud compliance provides daily assessments against industry benchmarks, showing compliant and non-compliant resources.
 
 1. Navigate to **Risk Center** > **Compliance** > **Cloud** in the left navigation panel
 
@@ -208,7 +208,7 @@
 
 *"Which identities have excessive permissions?"*
 
-**Identities compares granted vs. used entitlements to help enforce least privilege across cloud users, roles, and groups.**
+Identities compares granted vs. used entitlements to help enforce least privilege across cloud users, roles, and groups.
 
 1. Navigate to **Risk Center** > **Identities** in the left navigation panel
 2. Select the **Top identity risks** tab
@@ -222,7 +222,7 @@
 
 *"I have thousands of vulnerabilities — which ones actually matter?"*
 
-**Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.**
+Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.
 
 1. Navigate to **Risk Center** > **Vulnerabilities** > **Vulnerabilities[New]** in the left navigation panel
 2. Click **Explore: Hosts**
@@ -239,7 +239,7 @@
 
 *"Are there misconfigurations or secrets in our code before we deploy?"*
 
-**Code Security scans Infrastructure as Code and application source for misconfigurations, vulnerabilities, and hard-coded secrets.**
+Code Security scans Infrastructure as Code and application source for misconfigurations, vulnerabilities, and hard-coded secrets.
 
 1. Navigate to **Risk Center** > **Code Security** > **Infrastructure (IaC)** in the left navigation panel
 2. Choose a repository from the list
@@ -259,13 +259,13 @@
 
 *"What rules govern what FortiCNAPP detects?"*
 
-**Governance manages the built-in and custom policies that drive risk detection and threat alerts.**
+Governance manages the built-in and custom policies that drive risk detection and threat alerts.
 
 #### Policies
 
 *"How do I control what gets flagged?"*
 
-**Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.**
+Policies define the rules FortiCNAPP uses to detect risks and threats, and can be customized or extended with custom policies.
 
 1. Navigate to **Governance** > **Policies** in the left navigation panel
 
