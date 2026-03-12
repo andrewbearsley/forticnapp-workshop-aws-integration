@@ -235,7 +235,7 @@ rm -rf ~/lacework/aws
 
 We deployed the same CloudTrail and Configuration integrations from Lab 2, but this time using Terraform instead of the console. The Lacework CLI generated the Terraform code, and `terraform apply` created 46 resources - IAM roles, S3 buckets, KMS encryption, SNS/SQS notifications, and the FortiCNAPP integrations themselves.
 
-This is how you'd do it in production. The Terraform configuration can be checked into version control, reviewed in pull requests, and deployed through CI/CD pipelines. Need to integrate 50 AWS accounts? Lacework provides organization-level Terraform modules that deploy across all accounts in your AWS Organization in one go. And when you're done, `terraform destroy` cleanly removes everything.
+This is how you'd do it in production. The Terraform configuration can be checked into version control, reviewed in pull requests, and deployed through CI/CD pipelines. Need to integrate 50 AWS accounts? Fortinet provides organization-level Terraform modules that deploy across all accounts in your AWS Organization in one go. And when you're done, `terraform destroy` cleanly removes everything.
 
 
 ## Additional Resources
