@@ -28,12 +28,6 @@ Verify that the Lacework CLI is configured and working:
 lacework version
 ```
 
-If the CLI is not in your PATH, add it:
-
-```bash
-export PATH="$HOME/bin:$PATH"
-```
-
 ### Step 3: Generate Terraform Configuration for AWS Integration
 
 Use the Lacework CLI to generate Terraform code for AWS integration. This will create Terraform files for CloudTrail and Configuration assessment:
