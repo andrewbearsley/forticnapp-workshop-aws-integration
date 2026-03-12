@@ -2,8 +2,7 @@
 
 ## Objectives
 
-- Delete CloudFormation stacks created in previous labs
-- Terminate EC2 instances created in previous labs
+Leaving workshop resources running in AWS costs money. In this lab, we'll delete the CloudFormation stacks from Labs 2 and 3, terminate the EC2 instances from Labs 5 and 6, and verify everything is cleaned up. Always clean up after a lab.
 
 ## Prerequisites
 - Access to AWS Console

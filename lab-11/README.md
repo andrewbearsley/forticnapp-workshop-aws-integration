@@ -2,11 +2,7 @@
 
 ## Objectives
 
-- Clone a repository containing application code with security issues
-- Install and configure the Lacework SCA (Software Composition Analysis) scanning component
-- Scan application code for vulnerabilities, weaknesses, and license risks
-- Review scan results and understand security findings
-- Generate a Software Bill of Materials (SBOM)
+Your application's security is only as strong as its dependencies. In this lab, we'll scan application code for vulnerabilities in third-party packages, hard-coded credentials, and license risks using FortiCNAPP's SCA scanner. We'll also generate a Software Bill of Materials (SBOM) - increasingly required for compliance, and essential for knowing your exposure when the next major vulnerability drops.
 
 ## Prerequisites
 

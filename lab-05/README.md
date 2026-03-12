@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Install FortiCNAPP agent on Linux EC2 instance
+Agentless scanning (Lab 3) gives you periodic snapshots, but for continuous, real-time monitoring you need the agent. In this lab, we'll launch a Linux EC2 instance and install the FortiCNAPP agent (datacollector). Once running, it continuously streams process, network, and file activity to FortiCNAPP - this is how it builds behavioural baselines and detects anomalies.
 
 ## Prerequisites
 

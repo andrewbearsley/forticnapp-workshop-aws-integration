@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Install FortiCNAPP agent on Windows EC2 instance
+Most enterprise environments run a mix of Linux and Windows. In this lab, we'll install the FortiCNAPP agent on a Windows EC2 instance. The process is different (RDP, PowerShell, MSI package), but the result is the same - continuous workload monitoring and anomaly detection for your Windows fleet.
 
 ## Prerequisites
 

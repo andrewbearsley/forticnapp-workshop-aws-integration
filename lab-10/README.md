@@ -2,10 +2,7 @@
 
 ## Objectives
 
-- Clone a repository containing Terraform code with security issues
-- Install and configure the Lacework IaC scanning component
-- Scan Terraform code for security vulnerabilities and misconfigurations
-- Review scan results and understand security findings
+The best time to catch a misconfigured security group or unencrypted S3 bucket is before it gets deployed - not after it's running in production. In this lab, we'll scan Terraform code for security issues using FortiCNAPP's IaC scanner. This is shift-left security: finding misconfigurations in code so they never reach AWS.
 
 ## Prerequisites
 

@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Integrate agentless workload scanning with FortiCNAPP using CloudFormation
+Not every workload can have an agent installed on it. Agentless workload scanning solves this by taking snapshots of your EC2 instance volumes and scanning them for vulnerabilities and secrets - zero footprint on the instances themselves. In this lab, we'll deploy the agentless scanning infrastructure via CloudFormation and see what it provisions behind the scenes.
 
 ## Lab Steps
 

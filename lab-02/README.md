@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Integrate AWS Configuration and AWS CloudTrail with FortiCNAPP using CloudFormation
+FortiCNAPP needs two things to protect your AWS account: visibility into what resources exist (Configuration) and what's happening (CloudTrail). In this lab, we'll deploy a single CloudFormation stack that wires up both. This is the foundation for compliance reporting, resource inventory, and threat detection in all the labs that follow.
 
 ## Lab Steps
 

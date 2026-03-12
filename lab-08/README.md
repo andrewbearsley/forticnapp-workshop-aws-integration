@@ -2,10 +2,7 @@
 
 ## Objectives
 
-- Install the Lacework CLI tool in AWS CloudShell
-- Configure CLI with FortiCNAPP credentials
-- Install Terraform in AWS CloudShell
-- Verify CLI and Terraform installations
+Clicking through consoles doesn't scale. In production, you'd deploy FortiCNAPP integrations using infrastructure as code. In this lab, we'll install the two tools needed for that approach: the Lacework CLI (to generate Terraform configuration) and Terraform (to deploy it). This sets up everything for the next lab.
 
 ## Prerequisites
 

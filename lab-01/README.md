@@ -2,9 +2,7 @@
 
 ## Objectives
 
-- Understand FortiCNAPP capabilities
-- Navigate the FortiCNAPP console
-- Review key security features and dashboards
+Before we start integrating anything, let's get familiar with what FortiCNAPP actually does. We'll explore the console end-to-end - discovery, threat detection, risk analysis, code security, and governance - using a pre-configured demo environment with real data. By the end of this lab, you'll understand what FortiCNAPP gives you and why the integrations in the following labs matter.
 
 ## Prerequisites
 

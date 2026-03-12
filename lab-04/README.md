@@ -4,10 +4,7 @@ Normally, FortiCNAPP collects resource inventory on a scheduled cycle (up to 24 
 
 ## Objectives
 
-- Install the Lacework CLI tool in AWS CloudShell
-- Configure CLI with FortiCNAPP API credentials
-- Verify AWS integrations from Labs 2 and 3
-- Trigger an inventory scan to populate compliance data
+FortiCNAPP collects resource inventory on a scheduled cycle that can take up to 24 hours. We don't want to wait that long. In this lab, we'll install the Lacework CLI in AWS CloudShell, verify our integrations from Labs 2 and 3 are working, and trigger an immediate inventory scan so compliance data starts populating right away.
 
 ## Prerequisites
 

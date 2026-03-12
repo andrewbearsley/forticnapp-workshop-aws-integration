@@ -2,10 +2,7 @@
 
 ## Objectives
 
-- Use Lacework CLI to generate Terraform configuration for AWS integration
-- Deploy FortiCNAPP integrations using Terraform from AWS CloudShell
-- Understand infrastructure as code approach for integrations
-- Verify integration deployment
+In Lab 2, we deployed integrations by clicking through the CloudFormation console. That works for one account, but what about 50? In this lab, we'll use the Lacework CLI to generate Terraform code, then deploy the same CloudTrail and Configuration integrations as code. This is the production-ready approach: repeatable, version-controlled, and pipeline-friendly.
 
 ## Prerequisites
 
