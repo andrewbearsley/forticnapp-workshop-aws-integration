@@ -24,6 +24,9 @@
 
 2. Click **Launch Instance**
 3. Configure the instance:
+
+![Launch an instance configuration page](images/aws-ec2-launch-details.png)
+
    - **Name**: Enter a name (e.g., `FortiCNAPP-Linux-Agent`)
    - **Application and OS Images**: Select **Ubuntu**
    - **Instance type**: Select **t3.micro**
