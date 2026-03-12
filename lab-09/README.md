@@ -224,10 +224,8 @@ lacework cloud-account list
 
 The AWS integrations should no longer appear in the list.
 
-4. **Optional: Clean up Terraform files:**
-If you want to remove the generated Terraform files:
+4. **Clean up Terraform files:**
 ```bash
-cd ~
 rm -rf ~/lacework/aws
 ```
 
