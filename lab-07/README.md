@@ -82,7 +82,10 @@ The CloudFormation stack deletion does not automatically remove S3 buckets that 
 3. For each bucket:
    - Select the bucket
    - Click **Empty** to remove all objects (you must empty the bucket before deleting it)
-   - Confirm by typing the bucket name
+
+![Empty bucket confirmation dialog](images/aws-s3-empty-bucket.png)
+
+   - Confirm by typing `permanently delete`
    - Click **Delete** to delete the empty bucket
    - Confirm by typing the bucket name
 
