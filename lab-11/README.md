@@ -14,12 +14,41 @@ Your application's security is only as strong as its dependencies. In this lab, 
 
 ### Step 1: Open AWS CloudShell
 
-1. Log into AWS Console at <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
-2. Change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right
-3. Click the **CloudShell** icon in the top navigation bar
-4. Wait for CloudShell to initialize
+1. Navigate to <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>
+2. Click **Sign into console**
+3. After logging in, change to your local region (e.g., **Asia Pacific (Singapore)**) using the region selector in the top right of the AWS Console
+4. Click the **CloudShell** icon in the top navigation bar (cloud icon with `>_` symbol)
+5. Wait for CloudShell to initialize
 
-### Step 2: Clone the Example Repository
+### Step 2: Verify Lacework CLI Configuration
+
+Verify that the Lacework CLI is configured and working:
+
+```bash
+lacework version
+```
+
+![CloudShell with lacework version output](../lab-09/images/aws-cloudshell-lacework-version.png)
+
+### Step 3: Install the SCA Component
+
+Install the Lacework SCA scanning component:
+
+```bash
+lacework component install sca
+```
+
+This installs the Software Composition Analysis scanner that can analyze application dependencies, detect vulnerabilities, and identify license risks.
+
+### Step 4: Update the SCA Component (Optional)
+
+If the component is already installed, update it to ensure you have the latest version:
+
+```bash
+lacework component update sca
+```
+
+### Step 5: Clone the Example Repository
 
 Clone the repository containing application code with intentional security issues:
 
@@ -30,38 +59,6 @@ cd lacework-sca-scan-example
 ```
 
 This repository contains JavaScript/TypeScript application code with various security vulnerabilities, weaknesses, and license risks that FortiCNAPP can detect.
-
-### Step 3: Verify Lacework CLI Configuration
-
-Ensure your Lacework CLI is still configured:
-
-```bash
-lacework version
-```
-
-If you need to reconfigure, run:
-
-```bash
-lacework configure
-```
-
-### Step 4: Install the SCA Component
-
-Install the Lacework SCA scanning component:
-
-```bash
-lacework component install sca
-```
-
-This installs the Software Composition Analysis scanner that can analyze application dependencies, detect vulnerabilities, and identify license risks.
-
-### Step 5: Update the SCA Component (Optional)
-
-If the component is already installed, update it to ensure you have the latest version:
-
-```bash
-lacework component update sca
-```
 
 ### Step 6: Scan the Application Code
 
