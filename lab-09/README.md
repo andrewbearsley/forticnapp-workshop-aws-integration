@@ -57,32 +57,13 @@ cd ~/lacework/aws
 ls -la
 ```
 
-**Note**: The Lacework CLI generates only a `main.tf` file. It does not generate `variables.tf`, `terraform.tfvars`, or `outputs.tf` files. This is expected behavior - the generated configuration uses Lacework Terraform modules that have sensible defaults built in, so additional variable files are not required.
-
-The Lacework CLI generates a minimal Terraform configuration that uses pre-built modules from the Lacework Terraform registry. This is a best practice approach that simplifies deployment and maintenance.
+The CLI generates a single `main.tf` file that uses pre-built Terraform modules from the Lacework registry. All the complexity (IAM policies, S3 buckets, CloudTrail setup) is handled by the modules with sensible defaults.
 
 Review the generated configuration:
 
 ```bash
 cat main.tf
 ```
-
-The `main.tf` file contains:
-- **Terraform provider configuration**: Defines the required AWS and Lacework providers
-- **AWS Config module**: Uses the `lacework/config/aws` module to set up Configuration assessment integration
-- **CloudTrail module**: Uses the `lacework/cloudtrail/aws` module to set up CloudTrail integration
-- **Module integration**: The CloudTrail module references the IAM role created by the Config module
-
-This modular approach means:
-- The complex IAM policies, S3 bucket configurations, and CloudTrail setup are handled by the modules
-- You get a clean, maintainable Terraform configuration
-- Updates to the modules automatically provide improvements and security fixes
-- Less code to maintain while still having full control over the deployment
-- **No need for tfvars files**: The modules use default values, so you can deploy directly without additional configuration files
-
-**Optional: Creating Custom Variables**
-
-If you need to customize the configuration (e.g., different region, custom naming, etc.), you can create your own `variables.tf` and `terraform.tfvars` files, but this is not required for this lab. The generated `main.tf` is ready to use as-is.
 
 ### Step 5: Initialize Terraform
 
