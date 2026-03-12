@@ -67,6 +67,8 @@
 3. Select the Linux EC2 instance you just created
 4. Click **Connect**
 5. Select **EC2 Instance Connect** tab
+![EC2 Instance Connect page with Connect button](images/aws-ec2-instance-connect.png)
+
 6. Click **Connect** (this will open a browser-based terminal - no key pair needed)
 7. Once connected, verify system requirements:
    - Check available memory: `free -h`
