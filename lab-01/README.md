@@ -76,11 +76,9 @@ Explorer lets you build custom queries and visualize relationships between resou
 
 #### Search
 
-> We want to quickly look up a specific asset and understand what it's doing.
+> What is a specific application doing? What does it talk to? How much CPU and memory does it use?
 
 Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.
-
-> Customers frequently ask about the FortiCNAPP agent (datacollector): What does it talk to? How much CPU does it use? What is the memory usage trend? FortiCNAPP provides visibility into these metrics for any application, not just the agent itself.
 
 1. Click the **Search** icon in the left navigation panel
 2. Search for **datacollector** (this is the FortiCNAPP agent application)
