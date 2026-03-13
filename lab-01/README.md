@@ -34,7 +34,7 @@ We logged into the FortiCNAPP demo environment and selected the FORTIDEMO tenant
 
 ### Step 2: Explore Discovery Features
 
-> What exists in my cloud environment, and what should I worry about first?
+> What exists in our cloud environment, and what should we worry about first?
 
 FortiCNAPP's Discovery features provide visibility into cloud resources, their relationships, and their risk context.
 
@@ -53,7 +53,7 @@ Resource Inventory shows all cloud resources across accounts with vulnerability 
 
 #### Explorer
 
-> How do my cloud resources relate to each other, and where are the toxic combinations?
+> How do our cloud resources relate to each other, and where are the toxic combinations?
 
 Explorer lets you build custom queries and visualize relationships between resources, identities, and attack paths.
 
@@ -76,7 +76,7 @@ Explorer lets you build custom queries and visualize relationships between resou
 
 #### Search
 
-> I want to quickly look up a specific asset and understand what it's doing.
+> We want to quickly look up a specific asset and understand what it's doing.
 
 Search provides instant lookup of any known asset, showing its connections, processes, and resource consumption.
 
@@ -106,13 +106,13 @@ The key takeaway: FortiCNAPP doesn't just list your resources. It gives you the 
 
 ### Step 3: Explore Threat Center Features
 
-> Something happened in my environment - how do I investigate and respond?
+> Something happened in our environment - how do we investigate and respond?
 
 Threat Center surfaces security incidents with timelines, severity, and behavioral analysis.
 
 #### Alerts
 
-> How do I know when something suspicious happens, and what do I do about it?
+> How do we know when something suspicious happens, and what do we do about it?
 
 Alerts notify you of security incidents with severity, timeline of events, and AI-assisted triage to guide response.
 
@@ -132,7 +132,7 @@ Alerts notify you of security incidents with severity, timeline of events, and A
 
 #### Workloads - Hosts
 
-> What's running on my hosts and what does normal look like?
+> What's running on our hosts and what does normal look like?
 
 The Hosts dashboard builds an hourly baseline of process and network activity, making it easy to spot anomalies.
 
@@ -146,7 +146,7 @@ The Hosts dashboard builds an hourly baseline of process and network activity, m
 
 #### Workloads - Kubernetes
 
-> What's happening inside my Kubernetes clusters?
+> What's happening inside our Kubernetes clusters?
 
 The Kubernetes dashboard shows pod, container, and network activity across namespaces and clusters.
 
@@ -163,13 +163,13 @@ We also explored the Hosts polygraph, which is FortiCNAPP's hourly map of what's
 
 ### Step 4: Explore Risk Center Features
 
-> Where are the biggest risks in my environment, and what should I fix first?
+> Where are the biggest risks in our environment, and what should we fix first?
 
 Risk Center analyzes attack paths, compliance, identities, vulnerabilities, and code security.
 
 #### Attack Path
 
-> How could an attacker move through my environment?
+> How could an attacker move through our environment?
 
 Attack path analysis correlates vulnerabilities, network exposure, secrets, and IAM permissions to show exploitable paths to critical assets.
 
@@ -232,7 +232,7 @@ Identities compares granted vs. used entitlements to help enforce least privileg
 
 #### Vulnerabilities
 
-> I have thousands of vulnerabilities - which ones actually matter?
+> We have thousands of vulnerabilities - which ones actually matter?
 
 Vulnerabilities shows findings across hosts and containers, with active package detection to prioritize what's actually running.
 
