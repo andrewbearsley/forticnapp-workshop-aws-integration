@@ -272,12 +272,12 @@ if command -v aws &>/dev/null; then
         echo "  - AWS-AgentlessScanning stack not found"
     fi
 
-    # Delete AWS-Cloudtrail stack (parent only)
-    CLOUDTRAIL_STACK=$(find_parent_stack "AWS-Cloudtrail")
+    # Delete AWS-CloudTrail stack (parent only)
+    CLOUDTRAIL_STACK=$(find_parent_stack "AWS-CloudTrail")
     if [ -n "$CLOUDTRAIL_STACK" ]; then
         delete_cfn_stack "$CLOUDTRAIL_STACK"
     else
-        echo "  - AWS-Cloudtrail stack not found"
+        echo "  - AWS-CloudTrail stack not found"
     fi
 else
     echo "  - AWS CLI not found (skipping CloudFormation stack cleanup)"
