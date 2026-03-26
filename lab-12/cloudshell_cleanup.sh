@@ -220,65 +220,67 @@ else
     echo "  .bashrc not found"
 fi
 
-# Step 11: Empty S3 buckets BEFORE deleting CloudFormation stacks
-# CloudFormation cannot delete stacks containing non-empty S3 buckets
-echo "Emptying Lacework-related S3 buckets..."
+# Step 11: Delete CloudFormation stacks first (stops infrastructure that writes to S3)
+echo "Deleting CloudFormation stacks..."
 if command -v aws &>/dev/null; then
-    ALL_BUCKETS=$(aws s3api list-buckets --query 'Buckets[].Name' --output text --no-cli-pager 2>/dev/null || echo "")
-
-    LACEWORK_BUCKETS=""
-    if [ -n "$ALL_BUCKETS" ]; then
-        for bucket in $ALL_BUCKETS; do
-            if echo "$bucket" | grep -qiE "(lacework|lw-)" 2>/dev/null; then
-                LACEWORK_BUCKETS="$LACEWORK_BUCKETS $bucket"
+    # Helper: find the parent stack from a list (shortest name = parent, nested stacks have suffixes)
+    find_parent_stack() {
+        local prefix=$1
+        local all_stacks
+        all_stacks=$(aws cloudformation describe-stacks --no-cli-pager --query "Stacks[?starts_with(StackName, \`$prefix\`)].StackName" --output text 2>/dev/null || echo "")
+        if [ -z "$all_stacks" ]; then
+            echo ""
+            return
+        fi
+        local parent=""
+        for stack in $all_stacks; do
+            if [ -z "$parent" ] || [ ${#stack} -lt ${#parent} ]; then
+                parent="$stack"
             fi
         done
+        echo "$parent"
+    }
+
+    # Helper: delete a CloudFormation stack with retry logic
+    delete_cfn_stack() {
+        local stack_name=$1
+        echo "  Deleting $stack_name stack (this may take a few minutes)..."
+        aws cloudformation delete-stack --stack-name "$stack_name" --no-cli-pager 2>/dev/null || true
+        echo "    Waiting for deletion..."
+        if aws cloudformation wait stack-delete-complete --stack-name "$stack_name" --no-cli-pager 2>/dev/null; then
+            echo "    Done: $stack_name deleted"
+            return 0
+        fi
+        # Stack deletion failed - retry with retained resources
+        echo "    Retrying with retained resources..."
+        FAILED_RESOURCES=$(aws cloudformation describe-stack-resources --stack-name "$stack_name" --no-cli-pager \
+            --query 'StackResources[?ResourceStatus==`DELETE_FAILED`].LogicalResourceId' --output text 2>/dev/null || echo "")
+        if [ -n "$FAILED_RESOURCES" ]; then
+            aws cloudformation delete-stack --stack-name "$stack_name" --retain-resources $FAILED_RESOURCES --no-cli-pager 2>/dev/null || true
+            aws cloudformation wait stack-delete-complete --stack-name "$stack_name" --no-cli-pager 2>/dev/null || true
+            echo "    Done: $stack_name deleted (some resources retained for manual cleanup)"
+        else
+            echo "    Warning: Could not determine failed resources for $stack_name"
+        fi
+    }
+
+    # Delete AWS-AgentlessScanning stack (parent only, not nested stacks)
+    AGENTLESS_STACK=$(find_parent_stack "AWS-AgentlessScanning")
+    if [ -n "$AGENTLESS_STACK" ]; then
+        delete_cfn_stack "$AGENTLESS_STACK"
+    else
+        echo "  - AWS-AgentlessScanning stack not found"
     fi
 
-    if [ -n "$LACEWORK_BUCKETS" ]; then
-        for bucket in $LACEWORK_BUCKETS; do
-            echo "  Emptying bucket: $bucket"
-
-            if ! aws s3api head-bucket --bucket "$bucket" --no-cli-pager 2>/dev/null; then
-                echo "    - Bucket does not exist or is already deleted"
-                continue
-            fi
-
-            # Remove all current objects
-            echo "    Removing objects..."
-            aws s3 rm "s3://$bucket" --recursive --no-cli-pager 2>/dev/null || true
-
-            # Remove all object versions (loop handles pagination - max 1000 per API call)
-            echo "    Removing object versions..."
-            while true; do
-                VERSIONS=$(aws s3api list-object-versions --bucket "$bucket" --query 'Versions[].{Key:Key,VersionId:VersionId}' --output json --no-cli-pager 2>/dev/null)
-                if [ -z "$VERSIONS" ] || [ "$VERSIONS" == "null" ] || [ "$VERSIONS" == "[]" ]; then
-                    break
-                fi
-                echo "{\"Objects\": $VERSIONS, \"Quiet\": true}" | \
-                    aws s3api delete-objects --bucket "$bucket" --delete file:///dev/stdin --no-cli-pager 2>/dev/null || break
-                echo "      Deleted a batch of versions..."
-            done
-
-            # Remove all delete markers (loop handles pagination)
-            echo "    Removing delete markers..."
-            while true; do
-                MARKERS=$(aws s3api list-object-versions --bucket "$bucket" --query 'DeleteMarkers[].{Key:Key,VersionId:VersionId}' --output json --no-cli-pager 2>/dev/null)
-                if [ -z "$MARKERS" ] || [ "$MARKERS" == "null" ] || [ "$MARKERS" == "[]" ]; then
-                    break
-                fi
-                echo "{\"Objects\": $MARKERS, \"Quiet\": true}" | \
-                    aws s3api delete-objects --bucket "$bucket" --delete file:///dev/stdin --no-cli-pager 2>/dev/null || break
-                echo "      Deleted a batch of delete markers..."
-            done
-
-            echo "    Done: Bucket emptied"
-        done
+    # Delete AWS-Cloudtrail stack (parent only)
+    CLOUDTRAIL_STACK=$(find_parent_stack "AWS-Cloudtrail")
+    if [ -n "$CLOUDTRAIL_STACK" ]; then
+        delete_cfn_stack "$CLOUDTRAIL_STACK"
     else
-        echo "  - No Lacework-related buckets found"
+        echo "  - AWS-Cloudtrail stack not found"
     fi
 else
-    echo "  - AWS CLI not found (skipping S3 bucket cleanup)"
+    echo "  - AWS CLI not found (skipping CloudFormation stack cleanup)"
 fi
 
 # Step 12: Delete CloudTrail trails created by workshop
@@ -313,60 +315,7 @@ else
     echo "  - AWS CLI not found (skipping CloudTrail cleanup)"
 fi
 
-# Step 13: Delete CloudFormation stacks (after S3 buckets are emptied)
-echo "Deleting CloudFormation stacks..."
-if command -v aws &>/dev/null; then
-    # First, delete AWS-AgentlessScanning stack
-    AGENTLESS_STACK=$(aws cloudformation describe-stacks --no-cli-pager --query 'Stacks[?starts_with(StackName, `AWS-AgentlessScanning`)].StackName' --output text 2>/dev/null || echo "")
-    if [ -n "$AGENTLESS_STACK" ]; then
-        echo "  Deleting $AGENTLESS_STACK stack (this may take a few minutes)..."
-        if aws cloudformation delete-stack --stack-name "$AGENTLESS_STACK" --no-cli-pager 2>/dev/null; then
-            echo "    Deletion initiated, waiting for completion..."
-            if aws cloudformation wait stack-delete-complete --stack-name "$AGENTLESS_STACK" --no-cli-pager 2>/dev/null; then
-                echo "    Done: $AGENTLESS_STACK stack deleted successfully"
-            else
-                echo "    Warning: Stack deletion may have failed. Retrying with retained resources..."
-                # Get failed resources and retry
-                FAILED_RESOURCES=$(aws cloudformation describe-stack-resources --stack-name "$AGENTLESS_STACK" --no-cli-pager --query 'StackResources[?ResourceStatus==`DELETE_FAILED`].LogicalResourceId' --output text 2>/dev/null || echo "")
-                if [ -n "$FAILED_RESOURCES" ]; then
-                    aws cloudformation delete-stack --stack-name "$AGENTLESS_STACK" --retain-resources $FAILED_RESOURCES --no-cli-pager 2>/dev/null || true
-                    aws cloudformation wait stack-delete-complete --stack-name "$AGENTLESS_STACK" --no-cli-pager 2>/dev/null || true
-                fi
-            fi
-        else
-            echo "    Warning: Failed to initiate stack deletion"
-        fi
-    else
-        echo "  - AWS-AgentlessScanning stack not found"
-    fi
-
-    # Then, delete AWS-Cloudtrail stack
-    CLOUDTRAIL_STACK=$(aws cloudformation describe-stacks --no-cli-pager --query 'Stacks[?starts_with(StackName, `AWS-Cloudtrail`)].StackName' --output text 2>/dev/null || echo "")
-    if [ -n "$CLOUDTRAIL_STACK" ]; then
-        echo "  Deleting $CLOUDTRAIL_STACK stack (this may take a few minutes)..."
-        if aws cloudformation delete-stack --stack-name "$CLOUDTRAIL_STACK" --no-cli-pager 2>/dev/null; then
-            echo "    Deletion initiated, waiting for completion..."
-            if aws cloudformation wait stack-delete-complete --stack-name "$CLOUDTRAIL_STACK" --no-cli-pager 2>/dev/null; then
-                echo "    Done: $CLOUDTRAIL_STACK stack deleted successfully"
-            else
-                echo "    Warning: Stack deletion may have failed. Retrying with retained resources..."
-                FAILED_RESOURCES=$(aws cloudformation describe-stack-resources --stack-name "$CLOUDTRAIL_STACK" --no-cli-pager --query 'StackResources[?ResourceStatus==`DELETE_FAILED`].LogicalResourceId' --output text 2>/dev/null || echo "")
-                if [ -n "$FAILED_RESOURCES" ]; then
-                    aws cloudformation delete-stack --stack-name "$CLOUDTRAIL_STACK" --retain-resources $FAILED_RESOURCES --no-cli-pager 2>/dev/null || true
-                    aws cloudformation wait stack-delete-complete --stack-name "$CLOUDTRAIL_STACK" --no-cli-pager 2>/dev/null || true
-                fi
-            fi
-        else
-            echo "    Warning: Failed to initiate stack deletion"
-        fi
-    else
-        echo "  - AWS-Cloudtrail stack not found"
-    fi
-else
-    echo "  - AWS CLI not found (skipping CloudFormation stack cleanup)"
-fi
-
-# Step 14: Delete EC2 key pairs
+# Step 13: Delete EC2 key pairs
 echo "Deleting EC2 key pairs..."
 if command -v aws &>/dev/null; then
     ALL_KEY_PAIRS=$(aws ec2 describe-key-pairs --no-cli-pager --query 'KeyPairs[].KeyName' --output text 2>/dev/null || echo "")
@@ -387,7 +336,7 @@ else
     echo "  - AWS CLI not found (skipping EC2 key pair cleanup)"
 fi
 
-# Step 15: Delete security groups (except 'default')
+# Step 14: Delete security groups (except 'default')
 echo "Deleting security groups (except 'default')..."
 if command -v aws &>/dev/null; then
     SECURITY_GROUPS=$(aws ec2 describe-security-groups --no-cli-pager --query 'SecurityGroups[?GroupName!=`default`].GroupId' --output text 2>/dev/null || echo "")
@@ -408,12 +357,75 @@ else
     echo "  - AWS CLI not found (skipping security group cleanup)"
 fi
 
-# Step 16: Delete the now-empty S3 buckets
-echo "Deleting emptied S3 buckets..."
+# Step 15: Empty and delete S3 buckets (after stacks deleted so nothing writes new objects)
+echo "Emptying and deleting Lacework-related S3 buckets..."
 if command -v aws &>/dev/null; then
+    ALL_BUCKETS=$(aws s3api list-buckets --query 'Buckets[].Name' --output text --no-cli-pager 2>/dev/null || echo "")
+
+    LACEWORK_BUCKETS=""
+    if [ -n "$ALL_BUCKETS" ]; then
+        for bucket in $ALL_BUCKETS; do
+            if echo "$bucket" | grep -qiE "(lacework|lw-)" 2>/dev/null; then
+                LACEWORK_BUCKETS="$LACEWORK_BUCKETS $bucket"
+            fi
+        done
+    fi
+
     if [ -n "$LACEWORK_BUCKETS" ]; then
+        TMPFILE=$(mktemp)
         for bucket in $LACEWORK_BUCKETS; do
-            echo "  Deleting bucket: $bucket"
+            echo "  Processing bucket: $bucket"
+
+            if ! aws s3api head-bucket --bucket "$bucket" --no-cli-pager 2>/dev/null; then
+                echo "    - Bucket does not exist or is already deleted"
+                continue
+            fi
+
+            # Remove all current objects
+            echo "    Removing objects..."
+            aws s3 rm "s3://$bucket" --recursive --no-cli-pager 2>/dev/null || true
+
+            # Remove all object versions and delete markers
+            # Uses --no-paginate to get one page at a time (max 1000 items)
+            # Uses a temp file to avoid pipe/echo issues with large JSON
+            echo "    Removing versions and delete markers..."
+            BATCH_COUNT=0
+            while true; do
+                # Get one page of versions and markers
+                aws s3api list-object-versions --bucket "$bucket" --no-paginate \
+                    --output json --no-cli-pager 2>/dev/null > "$TMPFILE" || break
+
+                # Use python3 (available on CloudShell) to extract items and build delete request
+                DELETE_JSON=$(python3 -c "
+import json, sys
+with open('$TMPFILE') as f:
+    data = json.load(f)
+items = []
+for v in data.get('Versions', []) or []:
+    items.append({'Key': v['Key'], 'VersionId': v['VersionId']})
+for m in data.get('DeleteMarkers', []) or []:
+    items.append({'Key': m['Key'], 'VersionId': m['VersionId']})
+if items:
+    print(json.dumps({'Objects': items, 'Quiet': True}))
+" 2>/dev/null || echo "")
+
+                if [ -z "$DELETE_JSON" ]; then
+                    break
+                fi
+
+                echo "$DELETE_JSON" > "$TMPFILE.del"
+                aws s3api delete-objects --bucket "$bucket" --delete "file://$TMPFILE.del" \
+                    --no-cli-pager 2>/dev/null || break
+                BATCH_COUNT=$((BATCH_COUNT + 1))
+                echo "      Deleted batch $BATCH_COUNT..."
+            done
+
+            if [ "$BATCH_COUNT" -gt 0 ]; then
+                echo "    Emptied bucket ($BATCH_COUNT batches)"
+            fi
+
+            # Delete the bucket
+            echo "    Deleting bucket..."
             if aws s3api delete-bucket --bucket "$bucket" --no-cli-pager 2>/dev/null; then
                 echo "    Done: Deleted bucket: $bucket"
             else
@@ -421,11 +433,12 @@ if command -v aws &>/dev/null; then
                 echo "    Try manually: aws s3 rb s3://$bucket --force"
             fi
         done
+        rm -f "$TMPFILE" "$TMPFILE.del"
     else
-        echo "  - No buckets to delete"
+        echo "  - No Lacework-related buckets found"
     fi
 else
-    echo "  - AWS CLI not found (skipping S3 bucket deletion)"
+    echo "  - AWS CLI not found (skipping S3 bucket cleanup)"
 fi
 
 echo ""
