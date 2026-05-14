@@ -45,11 +45,11 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
 
    ![AWS CloudFormation Specify stack details page showing stack name and parameters](images/aws-cloudformation-stack-details.png)
 
-   - Stack name will be pre-populated
-   - API Token and other parameters are pre-configured
+   - Stack name will be pre-populated (e.g., `awls-forticnapp-config`)
+   - **Resource name prefix** will be pre-populated with the tenant name (e.g., `fortinetapacdemo`) - leave as default
    - Click **Next** to proceed to the next step
 3. Configure Stack Options: Leave as default (no changes needed)
-   - In the **Capabilities** section, check the **I acknowledge that AWS CloudFormation might create IAM resources with custom names** checkbox
+   - Scroll to the **Capabilities** section and verify the **I acknowledge that AWS CloudFormation might create IAM resources with custom names** checkbox is checked (it should be pre-checked)
    - Click **Next** to proceed to the next step
 4. Review and Create Stack: 
    - Review the stack details and leave as default
@@ -91,9 +91,10 @@ After the stack creation is complete, review the resources that were created:
 
 ### Step 5: Verify Integration in FortiCNAPP
 
-1. Return to FortiCNAPP console
-2. Navigate to **Settings** > **Integrations** > **Cloud accounts**
-3. Verify the AWS account appears in the list with Type 'Configuration'
+1. Return to FortiCNAPP console - the **CloudFormation Configuration - AWS** dialog should still be open
+2. Click **Exit** to close the integration dialog
+3. Navigate to **Settings** > **Integrations** > **Cloud accounts**
+4. Verify the AWS account appears in the list with Type 'Configuration'
    - You may need to refresh the browser to see the new integration.
 
 ![FortiCNAPP Cloud accounts showing new AWS integration](images/forticnapp-new-integration.png)
