@@ -67,7 +67,7 @@ cat main.tf
 
 ### Step 5: Initialize Terraform
 
-CloudShell home is capped at 1 GB and the AWS provider alone is ~700 MB, so by Lab 9 (after Lab 4's Lacework CLI, Lab 8's Terraform binary, and any leftover `install.sh` files from Labs 5/6) you can easily run out of space. Point Terraform's provider cache at `/tmp` (tmpfs, several GB) instead of home:
+CloudShell home is capped at 1 GB and the AWS provider alone is ~700 MB, so with the Lacework CLI (~50 MB) and Terraform binary (~150 MB) already in `~/bin`, there's barely enough room. Point Terraform's provider cache at `/tmp` (tmpfs, several GB) instead of home:
 
 ```bash
 mkdir -p /tmp/tfcache
@@ -77,7 +77,7 @@ terraform init
 
 This downloads the AWS and Lacework Terraform providers into `/tmp/tfcache` and symlinks them into the local `.terraform/providers/` directory.
 
-> **If `terraform init` fails with `Error while installing ... it is still not detected in /tmp; this is a bug in Terraform`**, it's almost always CloudShell home being full (the "/tmp" message is misleading). Run `df -h $HOME` to confirm, then clear space with `rm -rf ~/lacework/aws/.terraform ~/lacework/aws/.terraform.lock.hcl /tmp/tfcache` and retry the block above. If home is still tight, also delete the agent install scripts left over from Labs 5/6 (`rm -f ~/install.sh ~/Install-LWDataCollector.ps1`).
+> **If `terraform init` fails with `Error while installing ... it is still not detected in /tmp; this is a bug in Terraform`**, it's almost always CloudShell home being full (the "/tmp" message is misleading). Run `df -h $HOME` to confirm, then clear stale state with `rm -rf ~/lacework/aws/.terraform ~/lacework/aws/.terraform.lock.hcl /tmp/tfcache` and retry the block above.
 
 ### Step 6: Review Terraform Plan
 
