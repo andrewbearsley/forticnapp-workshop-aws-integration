@@ -1,8 +1,8 @@
-# Lab 2: Integrate AWS Configuration and AWS CloudTrail via CloudFormation
+# Lab 2: Integrate AWS Configuration via CloudFormation
 
 ## Objectives
 
-FortiCNAPP needs two things to protect your AWS account: visibility into what resources exist (Configuration) and what's happening (CloudTrail). In this lab, we'll deploy a single CloudFormation stack that wires up both. This is the foundation for compliance reporting, resource inventory, and threat detection in all the labs that follow.
+FortiCNAPP needs visibility into what resources exist in your AWS account so it can assess compliance, build an inventory, and analyse risk. In this lab, we'll deploy a CloudFormation stack that wires up the Configuration integration. This is the foundation for compliance reporting, resource inventory, and risk analysis in all the labs that follow.
 
 ## Lab Steps
 
@@ -30,7 +30,7 @@ FortiCNAPP needs two things to protect your AWS account: visibility into what re
 
 ![FortiCNAPP console showing Cloud accounts and CloudFormation integration method selected](images/forticnapp-cloudformation-integration.png)
 
-7. In the **Choose integration type** dropdown, select **CloudTrail+Configuration**
+7. In the **Choose integration type** dropdown, select **Configuration**
 8. Click **Run CloudFormation Template**
 9. This will open the CloudFormation stack creation page in your chosen AWS session (already logged in from Step 1)
 
@@ -42,12 +42,10 @@ The CloudFormation template should now be open in your AWS Console on Step 1 (Cr
 
 1. Create Stack: Click **Next** to proceed to the next step
 2. Specify stack details: Review the parameters and leave them as default
-   - The default configuration will create a new CloudTrail trail
-   - **Note**: For simplicity, we are creating a new CloudTrail in this lab. Customer environments will almost always have an existing centralised CloudTrail
 
    ![AWS CloudFormation Specify stack details page showing stack name and parameters](images/aws-cloudformation-stack-details.png)
 
-   - Stack name will be pre-populated (e.g., `AWS-CloudTrail`)
+   - Stack name will be pre-populated
    - API Token and other parameters are pre-configured
    - Click **Next** to proceed to the next step
 3. Configure Stack Options: Leave as default (no changes needed)
@@ -77,24 +75,6 @@ After the stack creation is complete, review the resources that were created:
    - This is the cross-account access role that FortiCNAPP uses to access your AWS account
    - Note this value for reference
 
-#### Review CloudTrail
-
-1. Navigate to **CloudTrail** service in AWS Console
-2. Click on **Trails** in the left navigation
-3. Find the trail that was created (it will have a name ending in `-laceworkcws`, e.g., `AWS-CloudTrail-laceworkcws`)
-
-![AWS CloudTrail dashboard showing the created trail](images/aws-cloudtrail-created.png)
-
-4. Click on the trail name to view details
-5. Review the **General details** section:
-   - Verify **SNS notification delivery** is enabled
-     - This is how FortiCNAPP receives notifications when the CloudTrail is updated
-   - Note the **Trail log location** (S3 bucket name)
-     - This is the S3 bucket where CloudTrail logs are stored
-     - If integrating to an existing CloudTrail, you would need these details
-
-![CloudTrail details showing trail log location and SNS notification delivery](images/aws-cloudtrail-details.png)
-
 #### Review IAM Role
 
 1. Navigate to **IAM** service in AWS Console
@@ -113,13 +93,13 @@ After the stack creation is complete, review the resources that were created:
 
 1. Return to FortiCNAPP console
 2. Navigate to **Settings** > **Integrations** > **Cloud accounts**
-3. Verify the AWS account appears in the list with Type 'Configuration' and 'CloudTrail'
+3. Verify the AWS account appears in the list with Type 'Configuration'
    - You may need to refresh the browser to see the new integration.
 
 ![FortiCNAPP Cloud accounts showing new AWS integration](images/forticnapp-new-integration.png)
 
 ## What did we do here?
 
-We connected FortiCNAPP to our AWS account using CloudFormation. This stack deployed a CloudTrail trail to capture API activity, an S3 bucket for log storage, SNS notifications to alert FortiCNAPP when new logs arrive, and a cross-account IAM role so FortiCNAPP can read our configuration.
+We connected FortiCNAPP to our AWS account using CloudFormation. The stack deployed a cross-account IAM role so FortiCNAPP can read our AWS configuration.
 
-This is the foundation for everything else. Configuration integration gives FortiCNAPP visibility into what resources exist (for compliance and inventory). CloudTrail integration gives it visibility into what's happening (for threat detection and alerts). Without these two, FortiCNAPP is flying blind.
+This is the foundation for everything else. Configuration integration gives FortiCNAPP visibility into what resources exist - which is what powers compliance assessments, resource inventory, and risk analysis in the labs that follow.
