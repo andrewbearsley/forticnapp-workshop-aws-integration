@@ -31,9 +31,9 @@ Agentless scanning (Lab 3) gives you periodic snapshots, but for deeper monitori
    - **Application and OS Images**: Select **Ubuntu**
    - **Instance type**: Select **t3.micro**
    - **Key pair (login)**: Select **Proceed without a key pair** (we'll use EC2 Instance Connect)
-4. **Network settings**:
-   - Use default
-   - The default security group will allow SSH traffic, providing external access to your instance
+4. **Network settings**: leave the defaults as-is. The launch wizard will create a new security group (named `launch-wizard-N`) with an inbound rule for SSH from anywhere, which is what Instance Connect needs.
+
+   > Don't switch this to "Select existing security group" and pick the VPC's `default` SG. That one only allows traffic between resources sharing the same SG, so Instance Connect won't be able to reach the instance.
 5. **Configure storage**: Leave default (8 GB gp3)
 6. Click **Launch Instance**
 
