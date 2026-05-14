@@ -74,8 +74,10 @@ lacework iac scan
 This will:
 - Analyze the Terraform files in the current directory
 - Detect security misconfigurations and vulnerabilities
-- Upload the scan results to FortiCNAPP
+- Upload the scan results to FortiCNAPP (controlled by `--upload`, default `true`)
 - Display findings in the terminal
+
+> **Note:** The CLI uploads results to the FortiCNAPP platform, but they will not appear in **Risk Center > Code Security > Infrastructure (IaC) > Assessments** unless the repository is onboarded via **Code Security > Add integration** (GitHub/GitLab/Bitbucket connector) or the scan runs from a registered CI/CD pipeline. A CLI scan from CloudShell or a developer laptop alone won't surface in this view - this lab focuses on demonstrating the scanner locally.
 
 ### Step 7: Review Scan Results
 

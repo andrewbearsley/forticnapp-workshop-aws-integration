@@ -68,6 +68,14 @@ Run the SCA scan on the current directory:
 lacework sca scan .
 ```
 
+To upload results to the FortiCNAPP platform, add `--save-results=true` (requires git metadata, which the cloned repo has):
+
+```bash
+lacework sca scan . --save-results=true
+```
+
+> **Note:** Unlike the IaC scanner (which uploads by default), SCA does not upload unless you pass `--save-results=true`. Even with the flag, uploaded results will not appear in **Risk Center > Code Security > Applications > Assessments** unless the repository is onboarded via **Code Security > Add integration** (GitHub/GitLab/Bitbucket connector) or the scan runs from a registered CI/CD pipeline. A CLI scan from CloudShell or a developer laptop alone won't surface in this view - this lab focuses on demonstrating the scanner locally.
+
 ### Step 7: Review Scan Results
 
 The scan output will show:
