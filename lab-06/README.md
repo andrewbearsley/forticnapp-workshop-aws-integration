@@ -37,9 +37,9 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
      - Select **.pem** format
      - Click **Create key pair**
      - **Important**: Download the key pair file and save it securely - you'll need it to retrieve the Windows password
-4. **Network settings**:
-   - Use default
-   - The default security group will allow RDP traffic, providing access to your instance
+4. **Network settings**: leave the defaults as-is. The launch wizard will create a new security group (named `launch-wizard-N`) with an inbound rule for RDP from anywhere, which is what you need to connect.
+
+   > Don't switch this to "Select existing security group" and pick the VPC's `default` SG. That one only allows traffic between resources sharing the same SG, so your RDP client won't be able to reach the instance.
 ![Instance type, key pair, and network settings](images/aws-ec2-launch-details-2.png)
 
 5. **Configure storage**: Leave default (30 GB gp3)
