@@ -72,6 +72,11 @@ Most enterprise environments run a mix of Linux and Windows. In this lab, we'll 
     - Make sure you copied the password correctly (it's case-sensitive)
     - Try clicking **Get Password** again in the AWS Console to refresh
     - Ensure you're using **Administrator** (with capital A) as the username
+
+14. If the RDP client can't connect at all (times out, "couldn't connect to the remote PC"):
+    - Your local network is probably blocking outbound TCP 3389. Test with PowerShell: `Test-NetConnection -ComputerName <instance-public-ip> -Port 3389`. If `TcpTestSucceeded : False`, that's your problem.
+    - **FortiSASE** (and most corporate VPN/secure-access agents) blocks RDP by default. Disconnect FortiSASE and try again.
+    - Other usual offenders: corporate firewalls, hotel/conference WiFi, some ISPs. Easiest workaround is to tether to a phone hotspot.
 14. Once connected, open **PowerShell as Administrator**:
     - Right-click the **Start** button and select **Windows PowerShell (Admin)** or **Terminal (Admin)**
     - Or search for "PowerShell" in the Start menu, right-click it, and select **Run as administrator**
