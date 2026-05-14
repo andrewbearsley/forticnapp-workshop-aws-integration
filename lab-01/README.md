@@ -22,7 +22,7 @@ Before we start integrating anything, let's get familiar with what FortiCNAPP ac
 
 4. Check your email and click the sign-in link
 5. If you see an onboarding wizard, skip it and select **Go to platform**
-6. Select the **FORTIDEMO** tenant from the bottom of the navigation drawer
+6. Select the **FORTIDEMO-2026-04** tenant from the bottom of the navigation drawer
 
 ![FortiCNAPP tenant selector at the bottom of the navigation drawer](images/forticnapp-choose-tenant.png)
 
@@ -30,7 +30,7 @@ Before we start integrating anything, let's get familiar with what FortiCNAPP ac
 
 #### What did we do here?
 
-We logged into the FortiCNAPP demo environment and selected the FORTIDEMO tenant. This tenant has existing cloud integrations and data, so we can explore real security findings without waiting for data to populate.
+We logged into the FortiCNAPP demo environment and selected the FORTIDEMO-2026-04 tenant. This tenant has existing cloud integrations and data, so we can explore real security findings without waiting for data to populate.
 
 ### Step 2: Explore Discovery Features
 
