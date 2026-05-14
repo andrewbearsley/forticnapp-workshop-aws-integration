@@ -67,17 +67,26 @@ cat main.tf
 
 ### Step 5: Initialize Terraform
 
-CloudShell home is capped at 1 GB and the AWS provider alone is ~700 MB, so with the Lacework CLI (~50 MB) and Terraform binary (~150 MB) already in `~/bin`, there's barely enough room. Point Terraform's provider cache at `/tmp` (tmpfs, several GB) instead of home:
+CloudShell home is capped at 1 GB and the AWS provider alone is ~700 MB, so with the Lacework CLI (~50 MB) and Terraform binary (~150 MB) already in `~/bin`, there's barely enough room. CloudShell's split mount layout (`/home` on disk, `/tmp` on tmpfs) also trips up git when Terraform downloads modules. Set three env vars to work around both before running `init`:
 
 ```bash
-mkdir -p /tmp/tfcache
+mkdir -p /tmp/tfcache $HOME/tmp
 export TF_PLUGIN_CACHE_DIR=/tmp/tfcache
+export TMPDIR=$HOME/tmp
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 terraform init
 ```
 
-This downloads the AWS and Lacework Terraform providers into `/tmp/tfcache` and symlinks them into the local `.terraform/providers/` directory.
+What each one does:
+- `TF_PLUGIN_CACHE_DIR=/tmp/tfcache` puts the provider cache on tmpfs (several GB) instead of home (1 GB).
+- `TMPDIR=$HOME/tmp` keeps git's temp working dir on the same filesystem as `.terraform/modules/`, so module clones don't fail crossing the `/home` mount boundary.
+- `GIT_DISCOVERY_ACROSS_FILESYSTEM=1` silences git's mount-crossing complaint if it does happen.
 
-> **If `terraform init` fails with `Error while installing ... it is still not detected in /tmp; this is a bug in Terraform`**, it's almost always CloudShell home being full (the "/tmp" message is misleading). Run `df -h $HOME` to confirm, then clear stale state with `rm -rf ~/lacework/aws/.terraform ~/lacework/aws/.terraform.lock.hcl /tmp/tfcache` and retry the block above.
+> **Troubleshooting**
+>
+> - `Error while installing ... it is still not detected in /tmp; this is a bug in Terraform`: CloudShell home is full (the "/tmp" message is misleading). Run `df -h $HOME` to confirm, then `rm -rf ~/lacework/aws/.terraform ~/lacework/aws/.terraform.lock.hcl /tmp/tfcache` and retry.
+> - `Error while installing ...: text file busy`: a stale terraform process is holding the provider binary open. Run `pkill -f terraform`, then `rm -rf /tmp/tfcache` and retry.
+> - `Could not download module ...: not a git repository (or any parent up to mount point /home)`: the env vars above (`TMPDIR` and `GIT_DISCOVERY_ACROSS_FILESYSTEM`) fix this. Make sure both are exported in the same shell as `terraform init`.
 
 ### Step 6: Review Terraform Plan
 
