@@ -118,3 +118,5 @@ After the CloudFormation stack completes, investigate the ECS cluster that was p
 We added agentless workload scanning to our AWS account. The CloudFormation stack deployed an ECS cluster that runs scheduled scanning tasks - it takes snapshots of your EC2 instance volumes and scans them for vulnerabilities and secrets, without installing anything on the instances themselves.
 
 This is great for environments where you can't or don't want to install agents. You get vulnerability and secret detection across your fleet with zero footprint on the workloads. The trade-off is that it runs on a schedule (default 24 hours) rather than continuously, so it's complementary to agent-based monitoring rather than a replacement.
+
+Worth noticing the order we did that in: the integration record was created in FortiCNAPP **before** the CloudFormation stack existed. FortiCNAPP owns that record, CloudFormation does not. When you clean up in Lab 7, deleting the stack will not remove it - you have to delete the integration in the console as well.
