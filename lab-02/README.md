@@ -104,3 +104,5 @@ After the stack creation is complete, review the resources that were created:
 We connected FortiCNAPP to our AWS account using CloudFormation. The stack deployed a cross-account IAM role so FortiCNAPP can read our AWS configuration.
 
 This is the foundation for everything else. Configuration integration gives FortiCNAPP visibility into what resources exist - which is what powers compliance assessments, resource inventory, and risk analysis in the labs that follow.
+
+Note that the integration record lives in FortiCNAPP, not in CloudFormation. Lab 7 covers cleanup, and deleting the stack there will not remove this integration - that has to be done in the console.
